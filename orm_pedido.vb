@@ -18,9 +18,9 @@
         End Try
     End Function
 
-    Function alterar_pedido(id_atendente As Integer, cpf_cliente As String, id_pedido As Integer)
+    Function alterar_pedido(id_atendente As Integer, cpf_cliente As String, status As String, forma_pagto As String, id_pedido As Integer)
         Try
-            sql = "UPDATE pedido SET ID_atendente = '" & id_atendente & "', CPF_cliente = '" & cpf_cliente & "' WHERE ID_pedido = " & id_pedido
+            sql = "UPDATE pedido SET ID_atendente = '" & id_atendente & "', CPF_cliente = '" & cpf_cliente & "', status = '" & status & "', Forma_pagto = '" & forma_pagto & "' WHERE ID_pedido = " & id_pedido
             rs = db.Execute(sql)
             Return rs
         Catch ex As Exception

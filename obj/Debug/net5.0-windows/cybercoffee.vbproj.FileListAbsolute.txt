@@ -20,3 +20,7 @@ E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.genr
 E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_login.resources
 E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_orders.resources
 E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_signin.resources
+E:\Project\VB_NET_Projects\cybercoffee\bin\Debug\net5.0-windows\Interop.ADODB.dll
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\Interop.ADODB.dll
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.vbproj.ResolveComReference.cache
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_products.resources

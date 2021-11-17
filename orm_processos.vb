@@ -10,13 +10,13 @@
         campos_id = ""
         valores_id = ""
 
-        If id_gerente <> vbNull && id_atendente <> vbNull Then
+        If id_gerente <> vbNull And id_atendente <> vbNull Then
             campos_id = "ID_gerente,ID_atendente"
             valores_id = "'" & id_gerente & "','" & id_atendente & "'"
-        ElseIf id_gerente <> vbNull && id_atendente = vbNull Then
+        ElseIf id_gerente <> vbNull And id_atendente = vbNull Then
             campos_id = "ID_gerente"
             valores_id = "'" & id_gerente & "'"
-        ElseIf id_gerente = vbNull && id_atendente <> vbNull Then
+        ElseIf id_gerente = vbNull And id_atendente <> vbNull Then
             campos_id = "ID_atendente"
             valores_id = "'" & id_atendente & "'"
         End If
