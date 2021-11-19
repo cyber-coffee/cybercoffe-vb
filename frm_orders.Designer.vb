@@ -253,13 +253,13 @@ Partial Class frm_orders
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.TabPage1.Location = New System.Drawing.Point(4, 24)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(489, 357)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Order summary"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'TabPage2
         '

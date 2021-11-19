@@ -4,7 +4,7 @@
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net5.0-windows</TargetFramework>
 		<RootNamespace>cybercoffee</RootNamespace>
-		<StartupObject>cybercoffee.frm_orders</StartupObject>
+		<StartupObject>cybercoffee.frm_pedido</StartupObject>
 		<UseWindowsForms>true</UseWindowsForms>
 		<MyType>WindowsForms</MyType>
 	</PropertyGroup>
