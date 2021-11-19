@@ -1,7 +1,7 @@
 ﻿Module orm_cliente
 
-    Function consultar_cliente_id(id_cliente As Integer)
-        Return selecionar_campos("cliente", "ID_cliente", id_cliente.ToString)
+    Function consultar_cliente_cpf(cpf_cliente As String)
+        Return selecionar_campos("cliente", "CPF_cliente", cpf_cliente)
     End Function
 
     Function inserir_cliente(cpf_cliente As String, nome_cliente As String, id_atendente As String)
