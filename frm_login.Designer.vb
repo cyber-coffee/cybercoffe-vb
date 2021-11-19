@@ -32,8 +32,10 @@ Partial Class frm_login
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btn_signin = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.ckb_senha = New System.Windows.Forms.CheckBox()
+        Me.txt_exit = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -139,18 +141,18 @@ Partial Class frm_login
         Me.Button1.Text = "Log in"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Button2
+        'btn_signin
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.Button2.Location = New System.Drawing.Point(30, 349)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(283, 33)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Sign in"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btn_signin.BackColor = System.Drawing.Color.White
+        Me.btn_signin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_signin.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btn_signin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.btn_signin.Location = New System.Drawing.Point(30, 371)
+        Me.btn_signin.Name = "btn_signin"
+        Me.btn_signin.Size = New System.Drawing.Size(283, 33)
+        Me.btn_signin.TabIndex = 2
+        Me.btn_signin.Text = "Sign in"
+        Me.btn_signin.UseVisualStyleBackColor = False
         '
         'PictureBox3
         '
@@ -162,14 +164,40 @@ Partial Class frm_login
         Me.PictureBox3.TabIndex = 10
         Me.PictureBox3.TabStop = False
         '
+        'ckb_senha
+        '
+        Me.ckb_senha.AutoSize = True
+        Me.ckb_senha.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.ckb_senha.Location = New System.Drawing.Point(238, 205)
+        Me.ckb_senha.Name = "ckb_senha"
+        Me.ckb_senha.Size = New System.Drawing.Size(75, 19)
+        Me.ckb_senha.TabIndex = 11
+        Me.ckb_senha.Text = "Visualizar"
+        Me.ckb_senha.UseVisualStyleBackColor = True
+        '
+        'txt_exit
+        '
+        Me.txt_exit.BackColor = System.Drawing.Color.White
+        Me.txt_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.txt_exit.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.txt_exit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.txt_exit.Location = New System.Drawing.Point(30, 332)
+        Me.txt_exit.Name = "txt_exit"
+        Me.txt_exit.Size = New System.Drawing.Size(283, 33)
+        Me.txt_exit.TabIndex = 12
+        Me.txt_exit.Text = "Exit system"
+        Me.txt_exit.UseVisualStyleBackColor = False
+        '
         'frm_login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.txt_exit)
+        Me.Controls.Add(Me.ckb_senha)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btn_signin)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -179,7 +207,9 @@ Partial Class frm_login
         Me.Controls.Add(Me.lbl_underline)
         Me.Controls.Add(Me.lbl_login)
         Me.Controls.Add(Me.lbl_logo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frm_login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -198,6 +228,8 @@ Partial Class frm_login
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btn_signin As Button
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents ckb_senha As CheckBox
+    Friend WithEvents txt_exit As Button
 End Class

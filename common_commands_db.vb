@@ -1,8 +1,7 @@
 ﻿Module common_commands_db
     Public db As ADODB.Connection
     Public rs As ADODB.Recordset
-    Public sql As String
-    Public resp As String
+    Public Id_gerente, resp, sql As String
 
     Sub conecta_banco_mysql()
         Try
@@ -18,19 +17,6 @@
                mensagem, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "ERRO")
     End Function
 
-    Function mensagem_aviso(mensagem As String)
-        MsgBox("Atenção: " + vbNewLine &
-               mensagem, MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "AVISO")
-    End Function
-
-    Function mensagem_sucesso(mensagem As String)
-        MsgBox("Sucesso: " + vbNewLine &
-               mensagem, MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "INFO")
-    End Function
-
-    Function mensagem_opcao(mensagem As String)
-        Return MsgBox(mensagem, MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, "INFO")
-    End Function
 
     Function excluir_campo(tabela As String, nome_id As String, id As Integer)
         Try
@@ -52,19 +38,9 @@
         End Try
     End Function
 
-    Function selecionar_tudo(tabela As String)
-        Try
-            sql = "SELECT * from " & tabela
-            rs = db.Execute(sql)
-            Return rs
-        Catch ex As Exception
-            mensagem_erro(ex.Message)
-        End Try
-    End Function
-
     Function selecionar_campos_join(tabela_principal As String, tabela_secundaria As String, nome_id_principal As String, nome_id_secundario As String, id_principal As String)
         Try
-            sql = "SELECT * from " & tabela_principal & " LEFT JOIN " & tabela_secundaria & " ON (" & tabela_principal & "." & nome_id_principal & " = " & tabela_secundaria & "." & nome_id_secundario & ") WHERE " & tabela_principal & "." & nome_id_principal & " = " & id_principal
+            sql = "SELECT * from " & tabela_principal & " t1 LEFT JOIN " & tabela_secundaria & " t2 ON (" & tabela_principal & "." & nome_id_principal & " = " & tabela_secundaria & "." & nome_id_secundario & ") WHERE " & tabela_principal & "." & nome_id_principal & " = " & id_principal
             rs = db.Execute(sql)
             Return rs
         Catch ex As Exception
@@ -72,34 +48,12 @@
         End Try
     End Function
 
-
-    Function selecionar_tudo_join(tabela_principal As String, tabela_secundaria As String, nome_id_principal As String, nome_id_secundario As String)
-        Try
-            sql = "SELECT * from " & tabela_principal & " LEFT JOIN " & tabela_secundaria & " ON (" & tabela_principal & "." & nome_id_principal & " = " & tabela_secundaria & "." & nome_id_secundario & ")"
-            rs = db.Execute(sql)
-            Return rs
-        Catch ex As Exception
-            mensagem_erro(ex.Message)
-        End Try
-    End Function
-
-    Function selecionar_como(tabela As String, nome_campo As String, campo As String)
-        Try
-            sql = "SELECT * from " & tabela & " WHERE " & nome_campo & " LIKE '%" & campo & "%'"
-            rs = db.Execute(sql)
-            Return rs
-        Catch ex As Exception
-            mensagem_erro(ex.Message)
-        End Try
-    End Function
-
-    Function selecionar_como_join(tabela_principal As String, tabela_secundaria As String, nome_id_principal As String, nome_id_secundario As String, nome_campo As String, campo As String)
-        Try
-            sql = "SELECT * from " & tabela_principal & " LEFT JOIN " & tabela_secundaria & " ON (" & tabela_principal & "." & nome_id_principal & " = " & tabela_secundaria & "." & nome_id_secundario & ") WHERE " & nome_campo & " LIKE '%" & campo & "%'"
-            rs = db.Execute(sql)
-            Return rs
-        Catch ex As Exception
-            mensagem_erro(ex.Message)
-        End Try
+    Function limpar_txt()
+        With frm_login
+            .txt_user.Clear()
+            .txt_password.Clear()
+            .txt_user.Focus()
+            .btn_signin.Visible = False
+        End With
     End Function
 End Module

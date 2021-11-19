@@ -18,9 +18,9 @@
         End Try
     End Function
 
-    Function alterar_pedido(id_atendente As Integer, cpf_cliente As String, status As String, forma_pagto As String, id_pedido As Integer, total As Double)
+    Function alterar_pedido(id_atendente As Integer, cpf_cliente As String, id_pedido As Integer)
         Try
-            sql = "UPDATE pedido SET ID_atendente = '" & id_atendente & "', CPF_cliente = '" & cpf_cliente & "', status = '" & status & "', Forma_pagto = '" & forma_pagto & "', Valor_total = " & total.ToString.Replace(",", ".") & " WHERE ID_pedido = " & id_pedido
+            sql = "UPDATE pedido SET ID_atendente = '" & id_atendente & "', CPF_cliente = '" & cpf_cliente & "' WHERE ID_pedido = " & id_pedido
             rs = db.Execute(sql)
             Return rs
         Catch ex As Exception
@@ -32,9 +32,9 @@
         Return excluir_campo("pedido", "ID_pedido", id_pedido)
     End Function
 
-    Function adicionar_produto_a_pedido(id_pedido As Integer, id_produto As Integer, qtde_produto As Integer)
+    Function adicionar_produto_a_pedido(id_pedido As Integer, id_produto As Integer)
         Try
-            sql = "INSERT INTO pedido_produto (ID_pedido, ID_produto,Qtde_produto) VALUES (" & id_pedido & "," & id_produto.ToString & "," & qtde_produto.ToString & ")"
+            sql = "INSERT INTO pedido_produto (ID_pedido, ID_produto) VALUES (" & id_pedido & "." & id_produto & ")"
             rs = db.Execute(sql)
             Return rs
         Catch ex As Exception
