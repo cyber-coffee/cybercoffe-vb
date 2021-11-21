@@ -20,7 +20,7 @@
             rs = db.Execute(sql)
             If rs.EOF = False Then
                 MsgBox("Funcionário: " & txt_user.Text & ", logado com sucesso.", vbInformation + vbOKOnly, "AVISO")
-                Form1.Show()
+                frm_menu_atendente.Show()
                 Me.Hide()
             Else
                 MsgBox("Conta não encontrada no banco!!", vbExclamation + vbOKOnly, "AVISO")
