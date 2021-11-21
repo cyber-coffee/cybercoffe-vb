@@ -214,6 +214,6 @@
     End Sub
 
     Private Sub frm_products_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        Form1.Show()
+        frm_menu_atendente.Show()
     End Sub
 End Class
