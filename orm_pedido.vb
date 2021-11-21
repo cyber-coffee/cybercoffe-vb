@@ -49,4 +49,12 @@
             mensagem_erro(ex.Message)
         End Try
     End Function
+
+    Function pedido_finalizado(ID_pedido As Integer)
+        rs = consultar_pedido_id(ID_pedido)
+        If rs.EOF = True Then
+            Return True
+        End If
+        Return LCase(rs.Fields(5).Value) = "finalizado"
+    End Function
 End Module
