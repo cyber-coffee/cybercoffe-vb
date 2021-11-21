@@ -46,3 +46,9 @@ C:\Users\user\Documents\Engenharia de Software\cybercoffee\obj\Debug\net5.0-wind
 C:\Users\user\Documents\Engenharia de Software\cybercoffee\obj\Debug\net5.0-windows\ref\cybercoffee.dll
 C:\Users\user\Documents\Engenharia de Software\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.pdb
 C:\Users\user\Documents\Engenharia de Software\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.genruntimeconfig.cache
+E:\Project\VB_NET_Projects\cybercoffee\bin\Debug\net5.0-windows\Interop.ADODB.dll
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\Interop.ADODB.dll
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.vbproj.ResolveComReference.cache
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_pedido.resources
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_products.resources
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_menu_atendente.resources
