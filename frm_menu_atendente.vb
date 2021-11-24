@@ -30,4 +30,9 @@
     Private Sub PedidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PedidosToolStripMenuItem.Click
         frm_pedido.Show()
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        frm_processos.Show()
+
+    End Sub
 End Class

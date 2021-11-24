@@ -54,3 +54,4 @@ E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_
 E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_menu_atendente.resources
 C:\Users\user\Documents\Engenharia de Software\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_menu_atendente.resources
 C:\Users\user\Documents\Engenharia de Software\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_pedido.resources
+C:\Users\user\Documents\Engenharia de Software\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_processos.resources
