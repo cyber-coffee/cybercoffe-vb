@@ -74,6 +74,7 @@ Partial Class frm_products
         Me.txt_id_categoria = New System.Windows.Forms.TextBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -590,15 +591,28 @@ Partial Class frm_products
         Me.Label8.TabIndex = 56
         Me.Label8.Text = "________________________________________________________"
         '
+        'Button1
+        '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Image = Global.cybercoffee.My.Resources.Resources.close
+        Me.Button1.Location = New System.Drawing.Point(989, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(35, 28)
+        Me.Button1.TabIndex = 55
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frm_products
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1040, 528)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.lbl_logo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frm_products"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_products"
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -670,4 +684,5 @@ Partial Class frm_products
     Friend WithEvents categoria As DataGridViewTextBoxColumn
     Friend WithEvents btn_buscar_categoria As DataGridViewImageColumn
     Friend WithEvents btn_remover_categoria As DataGridViewImageColumn
+    Friend WithEvents Button1 As Button
 End Class

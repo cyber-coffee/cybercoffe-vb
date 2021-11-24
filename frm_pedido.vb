@@ -206,4 +206,9 @@
     Private Sub btn_retornar_menu_Click(sender As Object, e As EventArgs) Handles btn_retornar_menu.Click
         retornar_ao_menu()
     End Sub
+
+    Private Sub btn_quitReq_Click(sender As Object, e As EventArgs) Handles btn_quitReq.Click
+        Me.Close()
+
+    End Sub
 End Class

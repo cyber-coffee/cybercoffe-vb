@@ -151,7 +151,7 @@ Partial Class frm_login
         Me.btn_signin.Name = "btn_signin"
         Me.btn_signin.Size = New System.Drawing.Size(283, 33)
         Me.btn_signin.TabIndex = 2
-        Me.btn_signin.Text = "Sign in"
+        Me.btn_signin.Text = "Manager environment"
         Me.btn_signin.UseVisualStyleBackColor = False
         '
         'PictureBox3

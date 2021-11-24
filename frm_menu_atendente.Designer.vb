@@ -29,15 +29,15 @@ Partial Class frm_menu_atendente
         Me.CadastrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProdutosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PedidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProdutosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProdutosToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrcessosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PrcessosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PrcessosToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogoffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QuitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label_nome = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,7 +45,7 @@ Partial Class frm_menu_atendente
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogoToolStripMenuItem, Me.HomeToolStripMenuItem, Me.CadastrarToolStripMenuItem, Me.ReportsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogoToolStripMenuItem, Me.HomeToolStripMenuItem, Me.CadastrarToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.LogoffToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 49)
@@ -73,7 +73,7 @@ Partial Class frm_menu_atendente
         '
         'CadastrarToolStripMenuItem
         '
-        Me.CadastrarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProdutosToolStripMenuItem, Me.PedidosToolStripMenuItem, Me.ProdutosToolStripMenuItem1, Me.ProdutosToolStripMenuItem2})
+        Me.CadastrarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProdutosToolStripMenuItem, Me.PedidosToolStripMenuItem})
         Me.CadastrarToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.CadastrarToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.CadastrarToolStripMenuItem.Margin = New System.Windows.Forms.Padding(10)
@@ -83,6 +83,8 @@ Partial Class frm_menu_atendente
         '
         'ProdutosToolStripMenuItem
         '
+        Me.ProdutosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.ProdutosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.ProdutosToolStripMenuItem.Name = "ProdutosToolStripMenuItem"
         Me.ProdutosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
@@ -91,29 +93,17 @@ Partial Class frm_menu_atendente
         '
         'PedidosToolStripMenuItem
         '
+        Me.PedidosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.PedidosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.PedidosToolStripMenuItem.Name = "PedidosToolStripMenuItem"
         Me.PedidosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.B), System.Windows.Forms.Keys)
         Me.PedidosToolStripMenuItem.Size = New System.Drawing.Size(242, 26)
         Me.PedidosToolStripMenuItem.Text = "Pedidos"
         '
-        'ProdutosToolStripMenuItem1
-        '
-        Me.ProdutosToolStripMenuItem1.Enabled = False
-        Me.ProdutosToolStripMenuItem1.Name = "ProdutosToolStripMenuItem1"
-        Me.ProdutosToolStripMenuItem1.Size = New System.Drawing.Size(242, 26)
-        Me.ProdutosToolStripMenuItem1.Text = "Produtos"
-        Me.ProdutosToolStripMenuItem1.Visible = False
-        '
-        'ProdutosToolStripMenuItem2
-        '
-        Me.ProdutosToolStripMenuItem2.Name = "ProdutosToolStripMenuItem2"
-        Me.ProdutosToolStripMenuItem2.Size = New System.Drawing.Size(242, 26)
-        Me.ProdutosToolStripMenuItem2.Text = "Produtos"
-        '
         'ReportsToolStripMenuItem
         '
-        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrcessosToolStripMenuItem, Me.PrcessosToolStripMenuItem1, Me.PrcessosToolStripMenuItem2})
+        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrcessosToolStripMenuItem})
         Me.ReportsToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.ReportsToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
@@ -122,20 +112,29 @@ Partial Class frm_menu_atendente
         '
         'PrcessosToolStripMenuItem
         '
+        Me.PrcessosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.PrcessosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.PrcessosToolStripMenuItem.Name = "PrcessosToolStripMenuItem"
-        Me.PrcessosToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
+        Me.PrcessosToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
         Me.PrcessosToolStripMenuItem.Text = "Processos"
         '
-        'PrcessosToolStripMenuItem1
+        'LogoffToolStripMenuItem
         '
-        Me.PrcessosToolStripMenuItem1.Name = "PrcessosToolStripMenuItem1"
-        Me.PrcessosToolStripMenuItem1.Size = New System.Drawing.Size(149, 26)
+        Me.LogoffToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuitToolStripMenuItem})
+        Me.LogoffToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.LogoffToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LogoffToolStripMenuItem.Name = "LogoffToolStripMenuItem"
+        Me.LogoffToolStripMenuItem.Size = New System.Drawing.Size(67, 45)
+        Me.LogoffToolStripMenuItem.Text = "&Logoff"
         '
-        'PrcessosToolStripMenuItem2
+        'QuitToolStripMenuItem
         '
-        Me.PrcessosToolStripMenuItem2.Enabled = False
-        Me.PrcessosToolStripMenuItem2.Name = "PrcessosToolStripMenuItem2"
-        Me.PrcessosToolStripMenuItem2.Size = New System.Drawing.Size(149, 26)
+        Me.QuitToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.QuitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.QuitToolStripMenuItem.Image = Global.cybercoffee.My.Resources.Resources.close
+        Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
+        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(110, 26)
+        Me.QuitToolStripMenuItem.Text = "Quit"
         '
         'PictureBox1
         '
@@ -169,16 +168,40 @@ Partial Class frm_menu_atendente
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Use o menu acima para navegar até as telas de ações."
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(12, 437)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(0, 17)
+        Me.Label3.TabIndex = 5
+        '
+        'Label_nome
+        '
+        Me.Label_nome.AutoSize = True
+        Me.Label_nome.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label_nome.ForeColor = System.Drawing.Color.White
+        Me.Label_nome.Location = New System.Drawing.Point(12, 49)
+        Me.Label_nome.Name = "Label_nome"
+        Me.Label_nome.Size = New System.Drawing.Size(11, 17)
+        Me.Label_nome.TabIndex = 6
+        Me.Label_nome.Text = "."
+        '
         'frm_menu_atendente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 483)
+        Me.Controls.Add(Me.Label_nome)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frm_menu_atendente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -199,11 +222,11 @@ Partial Class frm_menu_atendente
     Friend WithEvents PedidosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PrcessosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PrcessosToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents PrcessosToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents ProdutosToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ProdutosToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label_nome As Label
+    Friend WithEvents LogoffToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents QuitToolStripMenuItem As ToolStripMenuItem
 End Class

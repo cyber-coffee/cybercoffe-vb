@@ -20,6 +20,7 @@
             rs = db.Execute(sql)
             If rs.EOF = False Then
                 MsgBox("Funcionário: " & txt_user.Text & ", logado com sucesso.", vbInformation + vbOKOnly, "AVISO")
+                nome_func = txt_user.Text
                 frm_menu_atendente.Show()
                 Me.Hide()
             Else

@@ -74,6 +74,7 @@ Partial Class frm_pedido
         Me.txt_status_pedido = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.cmb_forma_pagto = New System.Windows.Forms.ComboBox()
+        Me.btn_quitReq = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgv_pedidos_produto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -643,12 +644,23 @@ Partial Class frm_pedido
         Me.cmb_forma_pagto.Size = New System.Drawing.Size(197, 23)
         Me.cmb_forma_pagto.TabIndex = 72
         '
+        'btn_quitReq
+        '
+        Me.btn_quitReq.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_quitReq.Image = Global.cybercoffee.My.Resources.Resources.close
+        Me.btn_quitReq.Location = New System.Drawing.Point(823, 16)
+        Me.btn_quitReq.Name = "btn_quitReq"
+        Me.btn_quitReq.Size = New System.Drawing.Size(35, 28)
+        Me.btn_quitReq.TabIndex = 73
+        Me.btn_quitReq.UseVisualStyleBackColor = True
+        '
         'frm_pedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(877, 473)
+        Me.Controls.Add(Me.btn_quitReq)
         Me.Controls.Add(Me.cmb_forma_pagto)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label6)
@@ -666,7 +678,9 @@ Partial Class frm_pedido
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.lbl_logo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frm_pedido"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_pedido"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -740,4 +754,5 @@ Partial Class frm_pedido
     Friend WithEvents txt_valor_unitario As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents tn As Button
+    Friend WithEvents btn_quitReq As Button
 End Class
