@@ -8,6 +8,9 @@
         Return selecionar_campos_join("pedido_produto", "produto", "ID_pedido_produto", "ID_produto", id_pedido.ToString)
     End Function
 
+    Function consultar_pedidos_por_atendente(id_atendente As Integer)
+        Return selecionar_campos("pedido", "ID_atendente", id_atendente.ToString)
+    End Function
     Function inserir_pedido(id_atendente As String, cpf_cliente As String)
         Try
             sql = "INSERT INTO pedido (ID_atendente, CPF_cliente) VALUES ('" & id_atendente & "','" & cpf_cliente & "')"
@@ -56,5 +59,13 @@
             Return True
         End If
         Return LCase(rs.Fields(5).Value) = "finalizado"
+    End Function
+
+    Function pedido_cancelado(ID_pedido As Integer)
+        rs = consultar_pedido_id(ID_pedido)
+        If rs.EOF = True Then
+            Return True
+        End If
+        Return LCase(rs.Fields(5).Value) = "cancelado"
     End Function
 End Module

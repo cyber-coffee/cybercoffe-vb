@@ -1,7 +1,5 @@
 ﻿Public Class frm_pedido
     Private Sub frm_pedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        alterar_pedido_selecionado(1)
-        conecta_banco_mysql()
         carregar_categorias()
         preencher_dados_pedido()
         preencher_pedido_produtos()
@@ -109,7 +107,7 @@
     End Sub
 
     Private Sub btn_adicionar_produto_Click(sender As Object, e As EventArgs) Handles btn_adicionar_produto.Click
-        If pedido_finalizado(ID_pedido) Then
+        If pedido_finalizado(ID_pedido) Or pedido_cancelado(ID_pedido) Then
             mensagem_aviso("Pedido já finalizado! Nenhuma alteração será feita")
             Exit Sub
         End If
@@ -163,7 +161,7 @@
     End Sub
 
     Private Sub btn_finalizar_pedido_Click(sender As Object, e As EventArgs) Handles btn_finalizar_pedido.Click
-        If pedido_finalizado(ID_pedido) Then
+        If pedido_finalizado(ID_pedido) or pedido_cancelado(ID_pedido) Then
             mensagem_aviso("Pedido já finalizado! Nenhuma alteração será feita")
             Exit Sub
         End If
@@ -200,15 +198,37 @@
     End Sub
 
     Sub retornar_ao_menu()
-        Form1.ShowDialog()
+        Try
+            frm_orders.ShowDialog()
+            Me.Close()
+        Catch ex As Exception
+            Me.Close()
+        End Try
+
     End Sub
 
     Private Sub btn_retornar_menu_Click(sender As Object, e As EventArgs) Handles btn_retornar_menu.Click
         retornar_ao_menu()
     End Sub
 
+    Private Sub btn_cancelar_pedido_Click(sender As Object, e As EventArgs) Handles btn_cancelar_pedido.Click
+        If pedido_finalizado(ID_pedido) Or pedido_cancelado(ID_pedido) Then
+            mensagem_aviso("Pedido já finalizado! Nenhuma alteração será feita")
+            Exit Sub
+        End If
+        rs = consultar_pedido_id(ID_pedido)
+        resp = mensagem_opcao("Deseja realmente finalizar o pedido?" + vbNewLine &
+                               "(Essa ação não poderá ser desfeita, e o pedido se tornará imutável.)")
+        Try
+            If rs.EOF = False Then
+                alterar_pedido(Integer.Parse(rs.Fields(3).Value), rs.Fields(4).Value, "Cancelado", cmb_forma_pagto.Text, Integer.Parse(ID_pedido), rs.Fields(2).Value)
+                mensagem_sucesso("Sucesso na alteração do total do pedido")
+            End If
+        Catch ex As Exception
+            mensagem_erro("Erro na alteração do valor total do pedido: " & ex.Message & "->" & ex.StackTrace)
+        End Try
+        preencher_dados_pedido()
     Private Sub btn_quitReq_Click(sender As Object, e As EventArgs) Handles btn_quitReq.Click
         Me.Close()
-
     End Sub
 End Class
