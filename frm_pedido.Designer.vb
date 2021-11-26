@@ -74,6 +74,7 @@ Partial Class frm_pedido
         Me.txt_status_pedido = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.cmb_forma_pagto = New System.Windows.Forms.ComboBox()
+        Me.btn_cancelar_pedido = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgv_pedidos_produto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -643,12 +644,25 @@ Partial Class frm_pedido
         Me.cmb_forma_pagto.Size = New System.Drawing.Size(197, 23)
         Me.cmb_forma_pagto.TabIndex = 72
         '
+        'btn_cancelar_pedido
+        '
+        Me.btn_cancelar_pedido.BackColor = System.Drawing.Color.White
+        Me.btn_cancelar_pedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_cancelar_pedido.Location = New System.Drawing.Point(22, 408)
+        Me.btn_cancelar_pedido.Margin = New System.Windows.Forms.Padding(10, 8, 3, 3)
+        Me.btn_cancelar_pedido.Name = "btn_cancelar_pedido"
+        Me.btn_cancelar_pedido.Size = New System.Drawing.Size(200, 26)
+        Me.btn_cancelar_pedido.TabIndex = 79
+        Me.btn_cancelar_pedido.Text = "Cancelar Pedido"
+        Me.btn_cancelar_pedido.UseVisualStyleBackColor = False
+        '
         'frm_pedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(877, 473)
+        Me.Controls.Add(Me.btn_cancelar_pedido)
         Me.Controls.Add(Me.cmb_forma_pagto)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label6)
@@ -740,4 +754,5 @@ Partial Class frm_pedido
     Friend WithEvents txt_valor_unitario As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents tn As Button
+    Friend WithEvents btn_cancelar_pedido As Button
 End Class

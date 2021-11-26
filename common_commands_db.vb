@@ -4,6 +4,7 @@
     Public Id_gerente as String
     Public sql As String
     Public resp As String
+    Public cont As Integer
 
     Sub conecta_banco_mysql()
         Try
@@ -111,5 +112,18 @@
             .txt_user.Focus()
             .btn_signin.Visible = False
         End With
+    End Function
+
+    Function parse_date(Date_str As String)
+        Try
+            If Date_str.Split("-"c).Length <= 1 Then
+                Return Date_str
+            End If
+            Dim date_parts As String()
+            date_parts = Date_str.Split("-"c)
+            Return date_parts(2) & "/" & date_parts(1) & "/" & date_parts(0)
+        Catch ex As Exception
+            Return "ERRO"
+        End Try
     End Function
 End Module

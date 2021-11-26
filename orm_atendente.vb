@@ -1,7 +1,11 @@
 ﻿Module orm_atendente
 
     Function consultar_atendente_id(id_atendente As Integer)
-        Return selecionar_campos("atendente", "id", id_atendente.ToString)
+        Return selecionar_campos("atendente", "id_atendente", id_atendente.ToString)
+    End Function
+
+    Function consultar_todos_atendentes()
+        Return selecionar_tudo("atendente")
     End Function
 
     Function inserir_atendente(nome As String, senha As String, cpf_atendente As String, id_gerente As Integer, data_admissao As String)

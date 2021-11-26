@@ -57,18 +57,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="order_id.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
-  <metadata name="customer.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
-  <metadata name="total.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
-  <metadata name="status.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
   <data name="MenuStrip1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -97,6 +85,52 @@
         3COdhRjjQOr1GaUUl3P+pJQ2kmcR6VVuAcO7mitRaVa5BQzLPYExlVt47+WeEEIYVbaBtma0sZJIeGn4
         T+AqdXDOsnBgxlQ+geAEA1u49F/J9YLfWfiCZbJ4VLM288RjY/hJx8MvFBG3A4kCm0Ds9UAlAAAAAElF
         TkSuQmCC
+</value>
+  </data>
+  <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAYAAACALL/6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAFVJREFUKFNjSElJcUhNTZ1PDAapZQAy7NElcGGwBpJBUlJSAlD3f2JwcnJyPENC
+        QoICiEEMBqllyMjIUADZQgwGqSXdSSQDfPGANRiBEjjjAVMDAwMAxx2alQebuToAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="PictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAYAAACALL/6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAFVJREFUKFNjSElJcUhNTZ1PDAapZQAy7NElcGGwBpJBUlJSAlD3f2JwcnJyPENC
+        QoICiEEMBqllyMjIUADZQgwGqSXdSSQDfPGANRiBEjjjAVMDAwMAxx2alQebuToAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="order_id.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
+  <metadata name="order_date.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
+  <metadata name="customer.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
+  <metadata name="total.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
+  <metadata name="status.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
+  <metadata name="payment_method.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
+  <metadata name="btn_open.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
+  <data name="btn_open.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAARdJREFUSEvtlFsNAkEMRVcCDkACDsABOAAHSAAHSAAHSEACEpCABLgn2ZJmsjvb
+        LvvJTc7PpJ0+ptOmQzNxEHfxEu+Wh7iIhRitrfCX9nESaeFUXkTWVFJWA1QT1l5457OgVaWwewpvNyh6
+        6p2OoqbSfi2q8tlHy+ZS86F9VWFgxpkJ8X5d7fzKHm8wk0KMsgVYctAnM8oG8K1dcdCnsRWEA9hEECgj
+        BsICVN+AWTbDHQcB+VEdrNyPHFVEJukmUkn5KsisLwituApvGxKO7B1zBLJkFHlMIImufcSCDIkg/uFq
+        kLm3TW1XsvW/1MPF7CqS2bRnRnqFcwnzbcxFKYL9FCSif5CUfBAGgnecXASpfdZJ1GbeNB+ddpdd4Imj
+        QQAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>
