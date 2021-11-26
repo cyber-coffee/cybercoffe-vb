@@ -2,7 +2,7 @@
     Public db As ADODB.Connection
     Public rs As ADODB.Recordset
     Public Id_gerente as String
-    Public sql As String
+    Public sql, nome_func As String
     Public resp As String
     Public cont As Integer
 

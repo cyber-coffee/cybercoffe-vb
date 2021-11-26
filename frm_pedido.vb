@@ -228,5 +228,7 @@
             mensagem_erro("Erro na alteração do valor total do pedido: " & ex.Message & "->" & ex.StackTrace)
         End Try
         preencher_dados_pedido()
+    Private Sub btn_quitReq_Click(sender As Object, e As EventArgs) Handles btn_quitReq.Click
+        Me.Close()
     End Sub
 End Class

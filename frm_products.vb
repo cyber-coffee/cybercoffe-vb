@@ -216,4 +216,13 @@
     Private Sub frm_products_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         frm_menu_atendente.Show()
     End Sub
+
+    Private Sub lbl_quit_Click(sender As Object, e As EventArgs)
+        Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+    End Sub
+
 End Class

@@ -21,6 +21,7 @@
             If rs.EOF = False Then
                 MsgBox("Funcionário: " & txt_user.Text & ", logado com sucesso.", vbInformation + vbOKOnly, "AVISO")
                 alterar_sessao_atendente(rs)
+                nome_func = txt_user.Text
                 frm_menu_atendente.Show()
                 Me.Hide()
             Else
