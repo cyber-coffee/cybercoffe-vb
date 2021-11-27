@@ -1,6 +1,13 @@
 ﻿Public Class frm_products
     Private Sub frm_products_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conecta_banco_mysql()
+        preencher_cmb_categoria()
+        preencher_produtos()
+        preencher_categorias()
+    End Sub
+
+    Sub preencher_cmb_categoria()
+        cmb_categoria.Items.Clear()
         rs = consultar_categorias()
         While rs.EOF = False
             With cmb_categoria
@@ -8,9 +15,6 @@
             End With
             rs.MoveNext()
         End While
-
-        preencher_produtos()
-        preencher_categorias()
     End Sub
 
 
@@ -187,6 +191,7 @@
         mensagem_sucesso("Categoria alterada com sucesso!")
         preencher_categorias()
         limpar_campos_categoria()
+        preencher_cmb_categoria()
     End Sub
 
     Private Sub btn_cadastrar_categoria_Click(sender As Object, e As EventArgs) Handles btn_cadastrar_categoria.Click
@@ -198,6 +203,7 @@
         mensagem_sucesso("Categoria cadastrada com sucesso!")
         preencher_categorias()
         limpar_campos_categoria()
+        preencher_cmb_categoria()
     End Sub
 
     Sub limpar_campos_produto()

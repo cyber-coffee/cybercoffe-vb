@@ -28,7 +28,7 @@
     End Sub
 
     Private Sub PedidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PedidosToolStripMenuItem.Click
-        frm_pedido.Show()
+        frm_orders.Show()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
