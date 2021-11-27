@@ -26,11 +26,11 @@ Partial Class frm_processos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.dgv_clientes = New System.Windows.Forms.DataGridView()
-        Me.cmb_funcionarios = New System.Windows.Forms.ComboBox()
-        Me.lbl_func = New System.Windows.Forms.Label()
         Me.cpf_cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nome_cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_do_pedido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmb_funcionarios = New System.Windows.Forms.ComboBox()
+        Me.lbl_func = New System.Windows.Forms.Label()
         CType(Me.dgv_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -76,6 +76,21 @@ Partial Class frm_processos
         Me.dgv_clientes.Size = New System.Drawing.Size(800, 423)
         Me.dgv_clientes.TabIndex = 57
         '
+        'cpf_cliente
+        '
+        Me.cpf_cliente.HeaderText = "CPF"
+        Me.cpf_cliente.Name = "cpf_cliente"
+        '
+        'nome_cliente
+        '
+        Me.nome_cliente.HeaderText = "Nome"
+        Me.nome_cliente.Name = "nome_cliente"
+        '
+        'id_do_pedido
+        '
+        Me.id_do_pedido.HeaderText = "ID do pedido"
+        Me.id_do_pedido.Name = "id_do_pedido"
+        '
         'cmb_funcionarios
         '
         Me.cmb_funcionarios.FormattingEnabled = True
@@ -94,21 +109,6 @@ Partial Class frm_processos
         Me.lbl_func.Size = New System.Drawing.Size(78, 17)
         Me.lbl_func.TabIndex = 59
         Me.lbl_func.Text = "Funcionário:"
-        '
-        'cpf_cliente
-        '
-        Me.cpf_cliente.HeaderText = "CPF"
-        Me.cpf_cliente.Name = "cpf_cliente"
-        '
-        'nome_cliente
-        '
-        Me.nome_cliente.HeaderText = "Nome"
-        Me.nome_cliente.Name = "nome_cliente"
-        '
-        'id_do_pedido
-        '
-        Me.id_do_pedido.HeaderText = "ID do pedido"
-        Me.id_do_pedido.Name = "id_do_pedido"
         '
         'frm_processos
         '
