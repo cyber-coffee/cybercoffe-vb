@@ -18,6 +18,7 @@
             Return rs
         Catch ex As Exception
             mensagem_erro(ex.Message)
+            Throw ex
         End Try
     End Function
 
@@ -28,6 +29,7 @@
             Return rs
         Catch ex As Exception
             mensagem_erro(ex.Message)
+            Throw ex
         End Try
     End Function
 
@@ -42,14 +44,18 @@
             Return rs
         Catch ex As Exception
             mensagem_erro(ex.Message)
+            Throw ex
         End Try
     End Function
 
     Function remover_produto_do_pedido(id_pedido As Integer, id_produto As Integer)
         Try
             sql = "DELETE FROM pedido_produto WHERE ID_pedido = " & id_pedido & " AND id_produto = '" & id_produto & "'"
+            rs = db.Execute(sql)
+            Return rs
         Catch ex As Exception
             mensagem_erro(ex.Message)
+            Throw ex
         End Try
     End Function
 

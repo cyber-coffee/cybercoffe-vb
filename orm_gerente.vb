@@ -10,6 +10,7 @@
             Return rs
         Catch ex As Exception
             mensagem_erro(ex.Message)
+            Throw ex
         End Try
     End Function
 
@@ -22,6 +23,7 @@
                 "WHERE ID_gerente = " & id_gerente
         Catch ex As Exception
             mensagem_erro(ex.Message)
+            Throw ex
         End Try
     End Function
 

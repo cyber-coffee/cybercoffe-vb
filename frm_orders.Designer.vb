@@ -24,12 +24,6 @@ Partial Class frm_orders
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_orders))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.menu_system = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menu_exit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menu_user = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menu_profile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menu_log_out = New System.Windows.Forms.ToolStripMenuItem()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
@@ -72,7 +66,7 @@ Partial Class frm_orders
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_nome_cliente = New System.Windows.Forms.TextBox()
-        Me.MenuStrip1.SuspendLayout()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel2.SuspendLayout()
         Me.FlowLayoutPanel3.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,58 +80,13 @@ Partial Class frm_orders
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.BackgroundImage = CType(resources.GetObject("MenuStrip1.BackgroundImage"), System.Drawing.Image)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menu_system, Me.menu_user})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.MenuStrip1.Size = New System.Drawing.Size(961, 24)
-        Me.MenuStrip1.TabIndex = 1
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'menu_system
-        '
-        Me.menu_system.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menu_exit})
-        Me.menu_system.ForeColor = System.Drawing.Color.White
-        Me.menu_system.Name = "menu_system"
-        Me.menu_system.Size = New System.Drawing.Size(57, 20)
-        Me.menu_system.Text = "System"
-        '
-        'menu_exit
-        '
-        Me.menu_exit.Name = "menu_exit"
-        Me.menu_exit.Size = New System.Drawing.Size(93, 22)
-        Me.menu_exit.Text = "Exit"
-        '
-        'menu_user
-        '
-        Me.menu_user.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menu_profile, Me.menu_log_out})
-        Me.menu_user.ForeColor = System.Drawing.Color.White
-        Me.menu_user.Name = "menu_user"
-        Me.menu_user.Size = New System.Drawing.Size(42, 20)
-        Me.menu_user.Text = "User"
-        '
-        'menu_profile
-        '
-        Me.menu_profile.Name = "menu_profile"
-        Me.menu_profile.Size = New System.Drawing.Size(115, 22)
-        Me.menu_profile.Text = "Profile"
-        '
-        'menu_log_out
-        '
-        Me.menu_log_out.Name = "menu_log_out"
-        Me.menu_log_out.Size = New System.Drawing.Size(115, 22)
-        Me.menu_log_out.Text = "Log out"
-        '
         'FlowLayoutPanel2
         '
         Me.FlowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(39, Byte), Integer))
         Me.FlowLayoutPanel2.Controls.Add(Me.FlowLayoutPanel3)
         Me.FlowLayoutPanel2.Controls.Add(Me.FlowLayoutPanel4)
         Me.FlowLayoutPanel2.Controls.Add(Me.btn_retornar_menu)
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(42, 105)
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(42, 53)
         Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(0, 4, 0, 3)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
         Me.FlowLayoutPanel2.Size = New System.Drawing.Size(223, 147)
@@ -222,7 +171,7 @@ Partial Class frm_orders
         Me.lbl_logo.AutoSize = True
         Me.lbl_logo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.lbl_logo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(190, Byte), Integer), CType(CType(145, Byte), Integer))
-        Me.lbl_logo.Location = New System.Drawing.Point(42, 53)
+        Me.lbl_logo.Location = New System.Drawing.Point(42, 19)
         Me.lbl_logo.Margin = New System.Windows.Forms.Padding(22, 23, 3, 0)
         Me.lbl_logo.Name = "lbl_logo"
         Me.lbl_logo.Size = New System.Drawing.Size(104, 21)
@@ -602,21 +551,30 @@ Partial Class frm_orders
         Me.txt_nome_cliente.Size = New System.Drawing.Size(164, 18)
         Me.txt_nome_cliente.TabIndex = 59
         '
+        'Button1
+        '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(914, 19)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(35, 28)
+        Me.Button1.TabIndex = 57
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frm_orders
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(961, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.lbl_logo)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.FlowLayoutPanel2)
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frm_orders"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gerenciamento de Pedidos"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.FlowLayoutPanel2.ResumeLayout(False)
         Me.FlowLayoutPanel3.ResumeLayout(False)
         Me.FlowLayoutPanel3.PerformLayout()
@@ -635,12 +593,6 @@ Partial Class frm_orders
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents menu_system As ToolStripMenuItem
-    Friend WithEvents menu_exit As ToolStripMenuItem
-    Friend WithEvents menu_user As ToolStripMenuItem
-    Friend WithEvents menu_profile As ToolStripMenuItem
-    Friend WithEvents menu_log_out As ToolStripMenuItem
     Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
     Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
     Friend WithEvents PictureBox5 As PictureBox
@@ -683,4 +635,5 @@ Partial Class frm_orders
     Friend WithEvents txt_cod_pedido As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Button1 As Button
 End Class
