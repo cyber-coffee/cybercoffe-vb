@@ -31,8 +31,14 @@
         frm_orders.Show()
     End Sub
 
+
+
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         frm_processos.Show()
 
+    End Sub
+
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        frm_clientes.Show()
     End Sub
 End Class

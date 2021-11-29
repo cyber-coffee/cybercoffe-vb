@@ -151,4 +151,16 @@
             mensagem_erro("Ocorreu um erro! Alterações canceladas.")
         End Try
     End Sub
+
+    Private Sub btn_cadastrar_cliente_Click(sender As Object, e As EventArgs) Handles btn_cadastrar_cliente.Click
+        frm_clientes.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btn_retornar_menu_Click(sender As Object, e As EventArgs) Handles btn_retornar_menu.Click
+        Me.Close()
+    End Sub
 End Class

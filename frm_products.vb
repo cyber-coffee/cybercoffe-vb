@@ -4,6 +4,8 @@
         preencher_cmb_categoria()
         preencher_produtos()
         preencher_categorias()
+        cmb_opcoes.SelectedIndex = 0
+        cmb_categoria.SelectedIndex = 0
     End Sub
 
     Sub preencher_cmb_categoria()
@@ -231,4 +233,7 @@
         Me.Close()
     End Sub
 
+    Private Sub btn_close_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

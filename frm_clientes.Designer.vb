@@ -23,14 +23,6 @@ Partial Class frm_clientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_clientes))
-        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.txt_nome_atendente = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.txt_cargo_atendente = New System.Windows.Forms.Label()
-        Me.btn_retornar_menu = New System.Windows.Forms.Button()
         Me.lbl_logo = New System.Windows.Forms.Label()
         Me.txt_nome_campo = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -106,11 +98,15 @@ Partial Class frm_clientes
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_cadastrar_cliente = New System.Windows.Forms.Button()
         Me.btn_alterar_cliente = New System.Windows.Forms.Button()
-        Me.FlowLayoutPanel2.SuspendLayout()
-        Me.FlowLayoutPanel3.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FlowLayoutPanel4.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btn_retornar_menu = New System.Windows.Forms.Button()
+        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txt_cargo_atendente = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.txt_nome_atendente = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -128,93 +124,12 @@ Partial Class frm_clientes
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel4.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel3.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'FlowLayoutPanel2
-        '
-        Me.FlowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.FlowLayoutPanel2.Controls.Add(Me.FlowLayoutPanel3)
-        Me.FlowLayoutPanel2.Controls.Add(Me.FlowLayoutPanel4)
-        Me.FlowLayoutPanel2.Controls.Add(Me.btn_retornar_menu)
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(21, 73)
-        Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(0, 4, 0, 3)
-        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(223, 147)
-        Me.FlowLayoutPanel2.TabIndex = 52
-        '
-        'FlowLayoutPanel3
-        '
-        Me.FlowLayoutPanel3.Controls.Add(Me.PictureBox5)
-        Me.FlowLayoutPanel3.Controls.Add(Me.txt_nome_atendente)
-        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(10, 13)
-        Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(10, 13, 3, 3)
-        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
-        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(200, 37)
-        Me.FlowLayoutPanel3.TabIndex = 29
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(24, 26)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox5.TabIndex = 28
-        Me.PictureBox5.TabStop = False
-        '
-        'txt_nome_atendente
-        '
-        Me.txt_nome_atendente.AutoSize = True
-        Me.txt_nome_atendente.ForeColor = System.Drawing.Color.White
-        Me.txt_nome_atendente.Location = New System.Drawing.Point(33, 10)
-        Me.txt_nome_atendente.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
-        Me.txt_nome_atendente.Name = "txt_nome_atendente"
-        Me.txt_nome_atendente.Size = New System.Drawing.Size(92, 15)
-        Me.txt_nome_atendente.TabIndex = 0
-        Me.txt_nome_atendente.Text = "Employee name"
-        '
-        'FlowLayoutPanel4
-        '
-        Me.FlowLayoutPanel4.Controls.Add(Me.PictureBox1)
-        Me.FlowLayoutPanel4.Controls.Add(Me.txt_cargo_atendente)
-        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(10, 66)
-        Me.FlowLayoutPanel4.Margin = New System.Windows.Forms.Padding(10, 13, 3, 3)
-        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
-        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(200, 37)
-        Me.FlowLayoutPanel4.TabIndex = 30
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(24, 26)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 28
-        Me.PictureBox1.TabStop = False
-        '
-        'txt_cargo_atendente
-        '
-        Me.txt_cargo_atendente.AutoSize = True
-        Me.txt_cargo_atendente.ForeColor = System.Drawing.Color.White
-        Me.txt_cargo_atendente.Location = New System.Drawing.Point(33, 10)
-        Me.txt_cargo_atendente.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
-        Me.txt_cargo_atendente.Name = "txt_cargo_atendente"
-        Me.txt_cargo_atendente.Size = New System.Drawing.Size(30, 15)
-        Me.txt_cargo_atendente.TabIndex = 0
-        Me.txt_cargo_atendente.Text = "Role"
-        '
-        'btn_retornar_menu
-        '
-        Me.btn_retornar_menu.BackColor = System.Drawing.Color.White
-        Me.btn_retornar_menu.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn_retornar_menu.Location = New System.Drawing.Point(10, 114)
-        Me.btn_retornar_menu.Margin = New System.Windows.Forms.Padding(10, 8, 3, 3)
-        Me.btn_retornar_menu.Name = "btn_retornar_menu"
-        Me.btn_retornar_menu.Size = New System.Drawing.Size(200, 26)
-        Me.btn_retornar_menu.TabIndex = 31
-        Me.btn_retornar_menu.Text = "Retornar ao menu"
-        Me.btn_retornar_menu.UseVisualStyleBackColor = False
         '
         'lbl_logo
         '
@@ -500,7 +415,7 @@ Partial Class frm_clientes
         Me.TextBox7.Location = New System.Drawing.Point(478, 269)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.PlaceholderText = "UF"
-        Me.TextBox7.Size = New System.Drawing.Size(25, 18)
+        Me.TextBox7.Size = New System.Drawing.Size(15, 18)
         Me.TextBox7.TabIndex = 117
         '
         'txt_email
@@ -552,7 +467,7 @@ Partial Class frm_clientes
         Me.txt_uf.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_uf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.txt_uf.Location = New System.Drawing.Point(499, 271)
-        Me.txt_uf.Mask = "AAA"
+        Me.txt_uf.Mask = "AA"
         Me.txt_uf.Name = "txt_uf"
         Me.txt_uf.Size = New System.Drawing.Size(34, 16)
         Me.txt_uf.TabIndex = 112
@@ -982,12 +897,109 @@ Partial Class frm_clientes
         Me.btn_alterar_cliente.Text = "Alterar cliente"
         Me.btn_alterar_cliente.UseVisualStyleBackColor = False
         '
+        'btn_retornar_menu
+        '
+        Me.btn_retornar_menu.BackColor = System.Drawing.Color.White
+        Me.btn_retornar_menu.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_retornar_menu.Location = New System.Drawing.Point(10, 114)
+        Me.btn_retornar_menu.Margin = New System.Windows.Forms.Padding(10, 8, 3, 3)
+        Me.btn_retornar_menu.Name = "btn_retornar_menu"
+        Me.btn_retornar_menu.Size = New System.Drawing.Size(200, 26)
+        Me.btn_retornar_menu.TabIndex = 31
+        Me.btn_retornar_menu.Text = "Retornar ao menu"
+        Me.btn_retornar_menu.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel4
+        '
+        Me.FlowLayoutPanel4.Controls.Add(Me.PictureBox1)
+        Me.FlowLayoutPanel4.Controls.Add(Me.txt_cargo_atendente)
+        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(10, 66)
+        Me.FlowLayoutPanel4.Margin = New System.Windows.Forms.Padding(10, 13, 3, 3)
+        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
+        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(200, 37)
+        Me.FlowLayoutPanel4.TabIndex = 30
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(24, 26)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 28
+        Me.PictureBox1.TabStop = False
+        '
+        'txt_cargo_atendente
+        '
+        Me.txt_cargo_atendente.AutoSize = True
+        Me.txt_cargo_atendente.ForeColor = System.Drawing.Color.White
+        Me.txt_cargo_atendente.Location = New System.Drawing.Point(33, 10)
+        Me.txt_cargo_atendente.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
+        Me.txt_cargo_atendente.Name = "txt_cargo_atendente"
+        Me.txt_cargo_atendente.Size = New System.Drawing.Size(30, 15)
+        Me.txt_cargo_atendente.TabIndex = 0
+        Me.txt_cargo_atendente.Text = "Role"
+        '
+        'FlowLayoutPanel3
+        '
+        Me.FlowLayoutPanel3.Controls.Add(Me.PictureBox5)
+        Me.FlowLayoutPanel3.Controls.Add(Me.txt_nome_atendente)
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(10, 13)
+        Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(10, 13, 3, 3)
+        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(200, 37)
+        Me.FlowLayoutPanel3.TabIndex = 29
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(24, 26)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox5.TabIndex = 28
+        Me.PictureBox5.TabStop = False
+        '
+        'txt_nome_atendente
+        '
+        Me.txt_nome_atendente.AutoSize = True
+        Me.txt_nome_atendente.ForeColor = System.Drawing.Color.White
+        Me.txt_nome_atendente.Location = New System.Drawing.Point(33, 10)
+        Me.txt_nome_atendente.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
+        Me.txt_nome_atendente.Name = "txt_nome_atendente"
+        Me.txt_nome_atendente.Size = New System.Drawing.Size(92, 15)
+        Me.txt_nome_atendente.TabIndex = 0
+        Me.txt_nome_atendente.Text = "Employee name"
+        '
+        'FlowLayoutPanel2
+        '
+        Me.FlowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.FlowLayoutPanel2.Controls.Add(Me.FlowLayoutPanel3)
+        Me.FlowLayoutPanel2.Controls.Add(Me.FlowLayoutPanel4)
+        Me.FlowLayoutPanel2.Controls.Add(Me.btn_retornar_menu)
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(21, 73)
+        Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(0, 4, 0, 3)
+        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(223, 147)
+        Me.FlowLayoutPanel2.TabIndex = 52
+        '
+        'Button1
+        '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(807, 25)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(35, 28)
+        Me.Button1.TabIndex = 77
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frm_clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(868, 517)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn_alterar_cliente)
         Me.Controls.Add(Me.btn_cadastrar_cliente)
         Me.Controls.Add(Me.TabControl1)
@@ -997,15 +1009,10 @@ Partial Class frm_clientes
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.lbl_logo)
         Me.Controls.Add(Me.FlowLayoutPanel2)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frm_clientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_clientes"
-        Me.FlowLayoutPanel2.ResumeLayout(False)
-        Me.FlowLayoutPanel3.ResumeLayout(False)
-        Me.FlowLayoutPanel3.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FlowLayoutPanel4.ResumeLayout(False)
-        Me.FlowLayoutPanel4.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -1024,19 +1031,17 @@ Partial Class frm_clientes
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel4.ResumeLayout(False)
+        Me.FlowLayoutPanel4.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel3.ResumeLayout(False)
+        Me.FlowLayoutPanel3.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
-    Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents txt_nome_atendente As Label
-    Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents txt_cargo_atendente As Label
-    Friend WithEvents btn_retornar_menu As Button
     Friend WithEvents lbl_logo As Label
     Friend WithEvents txt_nome_campo As TextBox
     Friend WithEvents Label4 As Label
@@ -1112,4 +1117,13 @@ Partial Class frm_clientes
     Friend WithEvents col_celular As DataGridViewTextBoxColumn
     Friend WithEvents col_email As DataGridViewTextBoxColumn
     Friend WithEvents col_busca As DataGridViewImageColumn
+    Friend WithEvents btn_retornar_menu As Button
+    Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents txt_cargo_atendente As Label
+    Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents txt_nome_atendente As Label
+    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents Button1 As Button
 End Class
