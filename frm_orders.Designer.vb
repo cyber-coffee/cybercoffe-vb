@@ -23,7 +23,7 @@ Partial Class frm_orders
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_orders))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
@@ -205,14 +205,14 @@ Partial Class frm_orders
         Me.dgv_orders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgv_orders.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(39, Byte), Integer))
         Me.dgv_orders.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_orders.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_orders.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_orders.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.order_id, Me.order_date, Me.customer, Me.total, Me.status, Me.payment_method, Me.btn_open})
         Me.dgv_orders.Location = New System.Drawing.Point(3, 3)

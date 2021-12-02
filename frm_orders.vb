@@ -101,6 +101,9 @@
         inserir_pedido(txt_cod_atendente.Text, txt_cpf_cliente.Text)
         mensagem_sucesso("Pedido criado com sucesso!")
         preencher_pedidos()
+        Dim ultimo_valor As ADODB.Recordset
+        ultimo_valor = selecionar_ultimo_campo("pedido", "ID_pedido")
+        inserir_processo("Pedido de código: " & ultimo_valor.Fields(0).Value & " cadastrado.", 0, atendente.Fields(2).Value)
     End Sub
 
     Private Sub txt_cod_pedido_LostFocus(sender As Object, e As EventArgs) Handles txt_cod_pedido.LostFocus
@@ -115,6 +118,7 @@
                 mensagem_sucesso("Pedido alterado com sucesso!")
                 preencher_pedidos()
                 preencher_dados_pedido()
+                inserir_processo("Pedido de código: " & Integer.Parse(txt_cod_pedido.Text) & " alterado.", 0, atendente.Fields(2).Value)
             End If
         Catch ex As Exception
             mensagem_erro("Ocorreu um erro! Alterações canceladas.")
@@ -146,6 +150,7 @@
                 mensagem_sucesso("Pedido alterado com sucesso!")
                 preencher_pedidos()
                 preencher_dados_pedido()
+                inserir_processo("Pedido de código: " & Integer.Parse(txt_cod_pedido.Text) & " cancelado.", 0, atendente.Fields(2).Value)
             End If
         Catch ex As Exception
             mensagem_erro("Ocorreu um erro! Alterações canceladas.")

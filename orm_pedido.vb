@@ -11,6 +11,7 @@
     Function consultar_pedidos_por_atendente(id_atendente As Integer)
         Return selecionar_campos("pedido", "ID_atendente", id_atendente.ToString)
     End Function
+
     Function inserir_pedido(id_atendente As String, cpf_cliente As String)
         Try
             sql = "INSERT INTO pedido (ID_atendente, CPF_cliente) VALUES ('" & id_atendente & "','" & cpf_cliente & "')"

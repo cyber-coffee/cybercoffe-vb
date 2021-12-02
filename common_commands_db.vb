@@ -1,5 +1,5 @@
 ﻿Module common_commands_db
-    Public db As ADODB.Connection
+    Public db, db_cep As ADODB.Connection
     Public rs As ADODB.Recordset
     Public Id_gerente as String
     Public sql, nome_func As String
@@ -10,6 +10,15 @@
         Try
             db = CreateObject("ADODB.Connection")
             db.Open("DRIVER={MYSQL ODBC 8.0 ANSI Driver};Server=localhost;Database=db_cybercoffee;port=3306;Uid=root;Pwd=")
+        Catch ex As Exception
+            MsgBox("Erro ao conectar ao banco: " & ex.Message, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "AVISO")
+        End Try
+    End Sub
+
+    Sub conecta_banco_cep_mysql()
+        Try
+            db_cep = CreateObject("ADODB.Connection")
+            db_cep.Open("DRIVER={MYSQL ODBC 8.0 ANSI Driver};Server=localhost;Database=db_cep;port=3306;Uid=root;Pwd=")
         Catch ex As Exception
             MsgBox("Erro ao conectar ao banco: " & ex.Message, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "AVISO")
         End Try
@@ -61,6 +70,7 @@
             Return rs
         Catch ex As Exception
             mensagem_erro(ex.Message)
+            Throw
         End Try
     End Function
 
@@ -71,6 +81,7 @@
             Return rs
         Catch ex As Exception
             mensagem_erro(ex.Message)
+            Throw
         End Try
     End Function
 
@@ -82,6 +93,18 @@
             Return rs
         Catch ex As Exception
             mensagem_erro(ex.Message)
+            Throw
+        End Try
+    End Function
+
+    Function selecionar_ultimo_campo(tabela As String, nome_id As String)
+        Try
+            sql = "SELECT * from " & tabela & " order by " & nome_id & " DESC LIMIT 1"
+            rs = db.Execute(sql)
+            Return rs
+        Catch ex As Exception
+            mensagem_erro(ex.Message)
+            Throw
         End Try
     End Function
 
@@ -92,6 +115,7 @@
             Return rs
         Catch ex As Exception
             mensagem_erro(ex.Message)
+            Throw
         End Try
     End Function
 
@@ -102,6 +126,7 @@
             Return rs
         Catch ex As Exception
             mensagem_erro(ex.Message)
+            Throw
         End Try
     End Function
 
@@ -125,5 +150,11 @@
         Catch ex As Exception
             Return "ERRO"
         End Try
+    End Function
+
+    Function get_curr_date()
+        Dim this_date As Date
+        this_date = Date.Today
+        Return this_date.Day & "/" & this_date.Month & "/" & this_date.Year
     End Function
 End Module

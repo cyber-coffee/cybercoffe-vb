@@ -69,6 +69,7 @@
                 inserir_cliente_simplificado(txt_cpf.Text, txt_nome_cliente.Text, Integer.Parse(txt_id_atendente.Text))
                 mensagem_sucesso("Cadastro simplificado do cliente efetuado com sucesso!")
                 preencher_clientes()
+                inserir_processo("Cliente de cpf: " & txt_cpf.Text & " cadastrado de forma simplificada.", 0, atendente.Fields(2).Value)
                 Exit Sub
             End If
             If campos_vazios() Then
@@ -81,6 +82,7 @@
                             txt_cidade.Text, txt_uf.Text, txt_fone_residencial.Text, txt_celular.Text, txt_email.Text)
             mensagem_sucesso("Cliente cadastrado com sucesso!")
             preencher_clientes()
+            inserir_processo("Cliente de cpf: " & txt_cpf.Text & " cadastrado.", 0, atendente.Fields(2).Value)
         Catch ex As Exception
             mensagem_erro("Erro no processamento do pedido!" + vbNewLine &
                           "Inserção cancelada.")
@@ -109,6 +111,7 @@
                             txt_uf.Text, txt_fone_residencial.Text, txt_celular.Text, txt_email.Text, txt_cpf.Text)
             mensagem_sucesso("Cliente alterado com sucesso.")
             preencher_clientes()
+            inserir_processo("Cliente de cpf: " & txt_cpf.Text & " alterado.", 0, atendente.Fields(2).Value)
         Catch ex As Exception
             mensagem_erro("Erro no processamento do pedido!" + vbNewLine &
                           "Alteração cancelada.")
