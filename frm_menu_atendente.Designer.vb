@@ -211,7 +211,6 @@ Partial Class frm_menu_atendente
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
-
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
@@ -229,4 +228,5 @@ Partial Class frm_menu_atendente
     Friend WithEvents Label_nome As Label
     Friend WithEvents LogoffToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -38,11 +38,13 @@
 
     Private Sub frm_clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conecta_banco_mysql()
+        conecta_banco_cep_mysql()
         alterar_sessao_atendente(consultar_atendente_id(1))
         preencher_atendentes()
         preencher_clientes()
         txt_nome_atendente.Text = atendente.Fields(0).Value
         txt_cargo_atendente.Text = role
+        cmb_tipo_campo.SelectedIndex = 0
     End Sub
 
     Private Sub cmb_atendente_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_atendente.SelectedValueChanged
@@ -64,14 +66,14 @@
                                    "(CPF do cliente, Nome do cliente e selecionar atendente).")
                     Exit Sub
                 End If
-                If campos_vazios() Then
-                    mensagem_aviso("Campos vazios encontrados!" + vbNewLine &
-                                   "Favor preencher todos os campos.")
-                    Exit Sub
-                End If
                 inserir_cliente_simplificado(txt_cpf.Text, txt_nome_cliente.Text, Integer.Parse(txt_id_atendente.Text))
                 mensagem_sucesso("Cadastro simplificado do cliente efetuado com sucesso!")
                 preencher_clientes()
+                Exit Sub
+            End If
+            If campos_vazios() Then
+                mensagem_aviso("Campos vazios encontrados!" + vbNewLine &
+                                   "Favor preencher todos os campos.")
                 Exit Sub
             End If
             inserir_cliente(txt_cpf.Text, txt_nome_cliente.Text, Integer.Parse(txt_id_atendente.Text),
@@ -138,6 +140,26 @@
     End Sub
 
     Private Sub btn_retornar_menu_Click(sender As Object, e As EventArgs) Handles btn_retornar_menu.Click
+        Me.Close()
+    End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+    End Sub
+
+    Private Sub txt_cep_LostFocus(sender As Object, e As EventArgs) Handles txt_cep.LostFocus
+        Try
+            rs = consultar_cep(txt_cep.Text)
+            If rs.EOF = True Then
+                mensagem_aviso("CEP não encontrado. Favor digitar outro CEP.")
+                Exit Sub
+            End If
+            txt_endereco.Text = rs.Fields(1).Value
+            txt_bairro.Text = rs.Fields(3).Value
+            txt_cidade.Text = rs.Fields(2).Value
+            txt_uf.Text = rs.Fields(4).Value
+        Catch ex As Exception
+            mensagem_erro("Erro ao buscar CPF.")
+        End Try
     End Sub
 End Class
