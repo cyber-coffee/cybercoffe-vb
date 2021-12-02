@@ -23,7 +23,7 @@
     End Sub
 
     Private Sub PrcessosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrcessosToolStripMenuItem.Click
-        frm_products.Show()
+        frm_processos.Show()
 
     End Sub
 
@@ -35,7 +35,6 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         frm_processos.Show()
-
     End Sub
 
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click

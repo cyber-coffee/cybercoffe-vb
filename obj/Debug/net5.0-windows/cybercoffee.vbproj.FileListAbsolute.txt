@@ -55,3 +55,33 @@ E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_
 C:\Users\user\Documents\Engenharia de Software\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_menu_atendente.resources
 C:\Users\user\Documents\Engenharia de Software\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_pedido.resources
 C:\Users\user\Documents\Engenharia de Software\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_processos.resources
+F:\Downloads\cybercoffe-vb\bin\Debug\net5.0-windows\cybercoffee.exe
+F:\Downloads\cybercoffe-vb\bin\Debug\net5.0-windows\cybercoffee.deps.json
+F:\Downloads\cybercoffe-vb\bin\Debug\net5.0-windows\cybercoffee.runtimeconfig.json
+F:\Downloads\cybercoffe-vb\bin\Debug\net5.0-windows\cybercoffee.runtimeconfig.dev.json
+F:\Downloads\cybercoffe-vb\bin\Debug\net5.0-windows\cybercoffee.dll
+F:\Downloads\cybercoffe-vb\bin\Debug\net5.0-windows\ref\cybercoffee.dll
+F:\Downloads\cybercoffe-vb\bin\Debug\net5.0-windows\cybercoffee.pdb
+F:\Downloads\cybercoffe-vb\bin\Debug\net5.0-windows\Interop.ADODB.dll
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.vbproj.AssemblyReference.cache
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\Interop.ADODB.dll
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.vbproj.ResolveComReference.cache
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.Form1.resources
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.frm_clientes.resources
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.frm_login.resources
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.frm_menu_atendente.resources
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.frm_orders.resources
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.frm_pedido.resources
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.frm_processos.resources
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.frm_products.resources
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.frm_signin.resources
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.Resources.resources
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.vbproj.GenerateResource.cache
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.GeneratedMSBuildEditorConfig.editorconfig
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.AssemblyInfoInputs.cache
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.AssemblyInfo.vb
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.vbproj.CoreCompileInputs.cache
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.dll
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\ref\cybercoffee.dll
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.pdb
+F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.genruntimeconfig.cache
