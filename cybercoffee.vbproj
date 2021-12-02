@@ -37,6 +37,11 @@
 			<AutoGen>True</AutoGen>
 			<DependentUpon>Resources.resx</DependentUpon>
 		</Compile>
+		<Compile Update=".Designer.vb">
+		  <DesignTime>True</DesignTime>
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>.xsd</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -51,6 +56,10 @@
 		<None Update="My Project\Application.myapp">
 			<Generator>MyApplicationCodeGenerator</Generator>
 			<LastGenOutput>Application.Designer.vb</LastGenOutput>
+		</None>
+		<None Update=".xsd">
+		  <Generator>MSDataSetGenerator</Generator>
+		  <LastGenOutput>.Designer.vb</LastGenOutput>
 		</None>
 	</ItemGroup>
 

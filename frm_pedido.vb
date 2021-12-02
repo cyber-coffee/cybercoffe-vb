@@ -129,6 +129,7 @@
             If rs.EOF = False Then
                 alterar_pedido(Integer.Parse(rs.Fields(3).Value), rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, Integer.Parse(ID_pedido), total)
                 mensagem_sucesso("Sucesso na alteração do total do pedido")
+                inserir_processo("Produto de id: " & id_produto & " adicionado ao pedido de código: " & txt_id_pedido.Text & ".", 0, atendente.Fields(2).Value)
             End If
         Catch ex As Exception
             mensagem_erro("Erro na alteração do valor total do pedido!")
@@ -138,6 +139,8 @@
 
     Sub preencher_pedido_produtos()
         Dim pedido_produto As ADODB.Recordset
+        Dim total As Double
+        total = 0.0
         dgv_pedidos_produto.Rows.Clear()
         pedido_produto = selecionar_como_join("pedido_produto", "produto", "ID_produto", "ID_produto", "ID_pedido", ID_pedido.ToString)
         While pedido_produto.EOF = False
@@ -153,11 +156,13 @@
                 With dgv_pedidos_produto
                     .Rows.Add(pedido_produto.Fields(0).Value, pedido_produto.Fields(5).Value, categoria.Fields(1).Value, qtde_produto, qtde_produto * valor_unitario, Nothing)
                 End With
+                total += valor_unitario * qtde_produto
             Catch ex As Exception
                 mensagem_erro("Erro ao carregar dados do pedido:" & ex.Message & " -> " & ex.StackTrace)
             End Try
             pedido_produto.MoveNext()
         End While
+        txt_total.Text = total
     End Sub
 
     Private Sub btn_finalizar_pedido_Click(sender As Object, e As EventArgs) Handles btn_finalizar_pedido.Click
@@ -170,8 +175,9 @@
                                "(Essa ação não poderá ser desfeita, e o pedido se tornará imutável.)")
         Try
             If rs.EOF = False Then
-                alterar_pedido(Integer.Parse(rs.Fields(3).Value), rs.Fields(4).Value, "Finalizado", cmb_forma_pagto.Text, Integer.Parse(ID_pedido), rs.Fields(2).Value)
+                alterar_pedido(Integer.Parse(rs.Fields(3).Value), rs.Fields(4).Value, "Finalizado", cmb_forma_pagto.Text, Integer.Parse(ID_pedido), Double.Parse(txt_total.Text))
                 mensagem_sucesso("Sucesso na alteração do total do pedido")
+                inserir_processo("Pedido de código: " & txt_id_pedido.Text & " alterado.", 0, atendente.Fields(2).Value)
             End If
         Catch ex As Exception
             mensagem_erro("Erro na alteração do valor total do pedido: " & ex.Message & "->" & ex.StackTrace)
@@ -194,6 +200,7 @@
             mensagem_sucesso("Produto removido com sucesso")
             preencher_dados_pedido()
             preencher_pedido_produtos()
+            inserir_processo("Produto de id: " & Integer.Parse(dgv_pedidos_produto.CurrentRow.Cells(0).Value) & " removido do pedido de código: " & ID_pedido & " .", 0, atendente.Fields(2).Value)
         End If
     End Sub
 
@@ -221,8 +228,9 @@
                                "(Essa ação não poderá ser desfeita, e o pedido se tornará imutável.)")
         Try
             If rs.EOF = False Then
-                alterar_pedido(Integer.Parse(rs.Fields(3).Value), rs.Fields(4).Value, "Cancelado", cmb_forma_pagto.Text, Integer.Parse(ID_pedido), rs.Fields(2).Value)
+                alterar_pedido(Integer.Parse(rs.Fields(3).Value), rs.Fields(4).Value, "Cancelado", cmb_forma_pagto.Text, Integer.Parse(ID_pedido), Double.Parse(txt_total.Text))
                 mensagem_sucesso("Sucesso na alteração do total do pedido")
+                inserir_processo("Pedido de código: " & txt_id_pedido.Text & " cancelado.", 0, atendente.Fields(2).Value)
             End If
         Catch ex As Exception
             mensagem_erro("Erro na alteração do valor total do pedido: " & ex.Message & "->" & ex.StackTrace)

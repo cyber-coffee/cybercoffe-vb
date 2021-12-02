@@ -59,6 +59,13 @@
         MsgBox("Produto cadastrado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "SUCESSO")
         preencher_produtos()
         limpar_campos_produto()
+        Try
+            Dim ultimo_produto As ADODB.Recordset
+            ultimo_produto = selecionar_ultimo_campo("produto", "ID_produto")
+            inserir_processo("Produto de id: " & ultimo_produto.Fields(0).Value & " cadastrado.", 0, atendente.Fields(2).Value)
+        Catch ex As Exception
+            mensagem_erro("Erro ao registrar processo de produto.")
+        End Try
     End Sub
 
     Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
@@ -147,6 +154,7 @@
             resp = mensagem_opcao("Deseja realmente apagar o produto de id: " & dgv_produtos.CurrentRow.Cells(0).Value & "?")
             If resp = vbYes Then
                 excluir_produto(dgv_produtos.CurrentRow.Cells(0).Value)
+                inserir_processo("Produto de id: " & dgv_produtos.CurrentRow.Cells(0).Value & " excluído", 0, atendente.Fields(2).Value)
                 mensagem_sucesso("Produto excluído com sucesso!")
             Else
                 mensagem_sucesso("Remoção cancelada")
@@ -167,45 +175,62 @@
     End Sub
 
     Private Sub dgv_categorias_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_categorias.CellClick
-        If dgv_categorias.CurrentRow.Cells(2).Selected Then
-            txt_id_categoria.Text = dgv_categorias.CurrentRow.Cells(0).Value
-            txt_nome_categoria.Text = dgv_categorias.CurrentRow.Cells(1).Value
-        End If
-        If dgv_categorias.CurrentRow.Cells(3).Selected Then
-            resp = mensagem_opcao("Deseja mesmo apagar a categoria: " + dgv_categorias.CurrentRow.Cells(1).Value + "?")
-            If resp = vbYes Then
-                excluir_categoria(dgv_categorias.CurrentRow.Cells(0).Value)
-                mensagem_sucesso("Exclusão feita com sucesso!")
-            Else
-                mensagem_sucesso("Remoção cancelada")
+        Try
+            If dgv_categorias.CurrentRow.Cells(2).Selected Then
+                txt_id_categoria.Text = dgv_categorias.CurrentRow.Cells(0).Value
+                txt_nome_categoria.Text = dgv_categorias.CurrentRow.Cells(1).Value
             End If
-            preencher_categorias()
-            limpar_campos_categoria()
-        End If
+            If dgv_categorias.CurrentRow.Cells(3).Selected Then
+                resp = mensagem_opcao("Deseja mesmo apagar a categoria: " + dgv_categorias.CurrentRow.Cells(1).Value + "?")
+                If resp = vbYes Then
+                    excluir_categoria(dgv_categorias.CurrentRow.Cells(0).Value)
+                    inserir_processo("Categoria de id: " & dgv_categorias.CurrentRow.Cells(0).Value & " excluída.", 0, atendente.Fields(2).Value)
+                    mensagem_sucesso("Exclusão feita com sucesso!")
+                Else
+                    mensagem_sucesso("Remoção cancelada")
+                End If
+                preencher_categorias()
+                limpar_campos_categoria()
+            End If
+        Catch ex As Exception
+            mensagem_erro("Erro ao remover categoria")
+        End Try
     End Sub
 
     Private Sub btn_editar_categoria_Click(sender As Object, e As EventArgs) Handles btn_editar_categoria.Click
-        If txt_id_categoria.Text = "" Or txt_nome_categoria.Text = "" Then
-            mensagem_aviso("Campos vazios encontrados! Favor preencher todos os campos necessários")
-            Exit Sub
-        End If
-        alterar_categoria(txt_nome_categoria.Text, txt_id_categoria.Text)
-        mensagem_sucesso("Categoria alterada com sucesso!")
-        preencher_categorias()
-        limpar_campos_categoria()
-        preencher_cmb_categoria()
+        Try
+            If txt_id_categoria.Text = "" Or txt_nome_categoria.Text = "" Then
+                mensagem_aviso("Campos vazios encontrados! Favor preencher todos os campos necessários")
+                Exit Sub
+            End If
+            alterar_categoria(txt_nome_categoria.Text, txt_id_categoria.Text)
+            mensagem_sucesso("Categoria alterada com sucesso!")
+            preencher_categorias()
+            limpar_campos_categoria()
+            preencher_cmb_categoria()
+            inserir_processo("Categoria de id: " & txt_id_categoria.Text & " alterada.", 0, Integer.Parse(atendente.Fields(2).Value))
+        Catch ex As Exception
+            mensagem_erro("Erro ao processar o pedido.")
+        End Try
     End Sub
 
     Private Sub btn_cadastrar_categoria_Click(sender As Object, e As EventArgs) Handles btn_cadastrar_categoria.Click
-        If txt_nome_categoria.Text = "" Then
-            mensagem_aviso("Campos vazios encontrados! Favor preencher todos os campos necessários")
-            Exit Sub
-        End If
-        inserir_categoria(txt_nome_categoria.Text)
-        mensagem_sucesso("Categoria cadastrada com sucesso!")
-        preencher_categorias()
-        limpar_campos_categoria()
-        preencher_cmb_categoria()
+        Try
+            If txt_nome_categoria.Text = "" Then
+                mensagem_aviso("Campos vazios encontrados! Favor preencher todos os campos necessários")
+                Exit Sub
+            End If
+            inserir_categoria(txt_nome_categoria.Text)
+            mensagem_sucesso("Categoria cadastrada com sucesso!")
+            preencher_categorias()
+            limpar_campos_categoria()
+            preencher_cmb_categoria()
+            Dim ultima_categoria As ADODB.Recordset
+            ultima_categoria = selecionar_ultimo_campo("categoria", "ID_categoria")
+            inserir_processo("Categoria de id: " & ultima_categoria.Fields(0).Value & " cadastrada", 0, atendente.Fields(2).Value)
+        Catch ex As Exception
+            mensagem_erro("Erro ao cadastrar categoria.")
+        End Try
     End Sub
 
     Sub limpar_campos_produto()

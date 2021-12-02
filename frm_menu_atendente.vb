@@ -24,7 +24,6 @@
 
     Private Sub PrcessosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrcessosToolStripMenuItem.Click
         frm_processos.Show()
-
     End Sub
 
     Private Sub PedidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PedidosToolStripMenuItem.Click

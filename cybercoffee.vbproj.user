@@ -13,6 +13,9 @@
     <Compile Update="frm_login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frm_menu_relat.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frm_orders.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -26,6 +29,17 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frm_signin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="relat_cliente_atendido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="relat_processos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="relat_produtos_vendidos.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
