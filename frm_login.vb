@@ -25,9 +25,18 @@
                 frm_menu_atendente.Show()
                 Me.Hide()
             Else
-                MsgBox("Conta não encontrada no banco!!", vbExclamation + vbOKOnly, "AVISO")
-                limpar_txt()
-
+                sql = "SELECT * from gerente WHERE nome = '" & txt_user.Text & "' and senha = '" & txt_password.Text & "'"
+                rs = db.Execute(sql)
+                If rs.EOF = False Then
+                    MsgBox("Funcionário: " & txt_user.Text & ", logado com sucesso.", vbInformation + vbOKOnly, "AVISO")
+                    alterar_sessao_gerente(rs)
+                    nome_func = txt_user.Text
+                    frm_menu_gerente.Show()
+                    Me.Hide()
+                Else
+                    MsgBox("Conta não encontrada no banco!!", vbExclamation + vbOKOnly, "AVISO")
+                    limpar_txt()
+                End If
             End If
         End If
 

@@ -44,6 +44,7 @@ Partial Class frm_orders
         Me.payment_method = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btn_open = New System.Windows.Forms.DataGridViewImageColumn()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.txt_cpf_cliente = New System.Windows.Forms.MaskedTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txt_cod_pedido = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -58,7 +59,6 @@ Partial Class frm_orders
         Me.btn_cancelar_pedido = New System.Windows.Forms.Button()
         Me.btn_alterar_pedido = New System.Windows.Forms.Button()
         Me.btn_cadastrar_cliente = New System.Windows.Forms.Button()
-        Me.txt_cpf_cliente = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -268,6 +268,7 @@ Partial Class frm_orders
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.TabPage2.Controls.Add(Me.txt_cpf_cliente)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Controls.Add(Me.txt_cod_pedido)
         Me.TabPage2.Controls.Add(Me.Label8)
@@ -282,7 +283,6 @@ Partial Class frm_orders
         Me.TabPage2.Controls.Add(Me.btn_cancelar_pedido)
         Me.TabPage2.Controls.Add(Me.btn_alterar_pedido)
         Me.TabPage2.Controls.Add(Me.btn_cadastrar_cliente)
-        Me.TabPage2.Controls.Add(Me.txt_cpf_cliente)
         Me.TabPage2.Controls.Add(Me.Label13)
         Me.TabPage2.Controls.Add(Me.PictureBox4)
         Me.TabPage2.Controls.Add(Me.Label4)
@@ -296,6 +296,17 @@ Partial Class frm_orders
         Me.TabPage2.Size = New System.Drawing.Size(650, 357)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Dados de pedido"
+        '
+        'txt_cpf_cliente
+        '
+        Me.txt_cpf_cliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
+        Me.txt_cpf_cliente.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txt_cpf_cliente.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.txt_cpf_cliente.Location = New System.Drawing.Point(282, 101)
+        Me.txt_cpf_cliente.Mask = "000,000,000-00"
+        Me.txt_cpf_cliente.Name = "txt_cpf_cliente"
+        Me.txt_cpf_cliente.Size = New System.Drawing.Size(100, 16)
+        Me.txt_cpf_cliente.TabIndex = 90
         '
         'Label9
         '
@@ -460,18 +471,6 @@ Partial Class frm_orders
         Me.btn_cadastrar_cliente.Text = "Novo cliente"
         Me.btn_cadastrar_cliente.UseVisualStyleBackColor = False
         '
-        'txt_cpf_cliente
-        '
-        Me.txt_cpf_cliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.txt_cpf_cliente.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_cpf_cliente.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txt_cpf_cliente.ForeColor = System.Drawing.Color.White
-        Me.txt_cpf_cliente.Location = New System.Drawing.Point(277, 99)
-        Me.txt_cpf_cliente.Name = "txt_cpf_cliente"
-        Me.txt_cpf_cliente.PlaceholderText = "CPF do Cliente"
-        Me.txt_cpf_cliente.Size = New System.Drawing.Size(107, 18)
-        Me.txt_cpf_cliente.TabIndex = 71
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -618,7 +617,6 @@ Partial Class frm_orders
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents txt_nome_cliente As TextBox
-    Friend WithEvents txt_cpf_cliente As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents btn_cancelar_pedido As Button
@@ -636,4 +634,5 @@ Partial Class frm_orders
     Friend WithEvents Label8 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents txt_cpf_cliente As MaskedTextBox
 End Class

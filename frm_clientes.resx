@@ -107,6 +107,9 @@
   <metadata name="col_email.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
+  <metadata name="dir_imagem.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
   <metadata name="col_busca.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
@@ -226,7 +229,7 @@
   <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAH5JREFUOE+dj4ENgCAMBBnBERiBDWFDR8I2fA2WlqqXEOH/CjF9pZdyYDugoNE6
+        DAAACwwBP0AiyAAAAH5JREFUOE+dj4ENgCAMBBnBERiBDWFDR8I2fA2WlqqXEOH/CjF9pZdyYDugoNE6
         l0LBPbymg46veYH2EMcXRL0rePmCIWZ1tgcFFqYBWfGgQCK/OA9nVHtI/PcyCxBl4N0/c2GJXn4TCdve
         LSY4Nz3a1EfgwD28imgQDa6kdAE/HtNxc/wvugAAAABJRU5ErkJggg==
 </value>

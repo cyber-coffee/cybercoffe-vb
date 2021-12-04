@@ -28,9 +28,9 @@
         End Try
     End Function
 
-    Function inserir_cliente(cpf_cliente As String, nome_cliente As String, id_atendente As String, data_nascimento As String, cep As String, endereco As String, complemento As String, bairro As String, cidade As String, uf As String, fone_residencial As String, celular As String, email As String)
+    Function inserir_cliente(cpf_cliente As String, nome_cliente As String, id_atendente As String, data_nascimento As String, cep As String, endereco As String, complemento As String, bairro As String, cidade As String, uf As String, fone_residencial As String, celular As String, email As String, nome_foto As String)
         Try
-            sql = "INSERT INTO cliente (CPF_cliente, Nome_cliente, ID_atendente, Data_nascimento, cep, endereco, complemento, bairro, cidade, uf, fone_residencial, celular, email) " &
+            sql = "INSERT INTO cliente (CPF_cliente, Nome_cliente, ID_atendente, Data_nascimento, cep, endereco, complemento, bairro, cidade, uf, fone_residencial, celular, email, foto) " &
                                         "VALUES('" & cpf_cliente & "'," &
                                         "'" & nome_cliente & "'," &
                                         "'" & id_atendente & "'," &
@@ -43,7 +43,8 @@
                                         "'" & uf & "'," &
                                         "'" & fone_residencial & "'," &
                                         "'" & celular & "'," &
-                                        "'" & email & "'" &
+                                        "'" & email & "'," &
+                                        "'" & nome_foto.Replace("\", "\\").Trim & "'" &
                                         ")"
             rs = db.Execute(sql)
             Return rs
@@ -54,7 +55,7 @@
 
     End Function
 
-    Function alterar_cliente(nome_cliente As String, id_atendente As Integer, data_nascimento As String, cep As String, endereco As String, complemento As String, bairro As String, cidade As String, uf As String, fone_residencial As String, celular As String, email As String, cpf_cliente As String)
+    Function alterar_cliente(nome_cliente As String, id_atendente As Integer, data_nascimento As String, cep As String, endereco As String, complemento As String, bairro As String, cidade As String, uf As String, fone_residencial As String, celular As String, email As String, cpf_cliente As String, nome_foto As String)
         Try
             sql = "UPDATE cliente SET nome_cliente = '" & nome_cliente & "', " &
                     "ID_atendente = '" & id_atendente.ToString & "'," &
@@ -68,7 +69,8 @@
                     "UF = '" & uf & "'," &
                     "fone_residencial = '" & fone_residencial & "'," &
                     "celular = '" & celular & "'," &
-                    "email = '" & email & "' " &
+                    "email = '" & email & "', " &
+                    "foto ='" & nome_foto.Replace("\", "\\").Trim & "'" &
                     "WHERE CPF_cliente = '" & cpf_cliente & "'"
             rs = db.Execute(sql)
             Return rs

@@ -85,3 +85,10 @@ F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.dll
 F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\ref\cybercoffee.dll
 F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.pdb
 F:\Downloads\cybercoffe-vb\obj\Debug\net5.0-windows\cybercoffee.genruntimeconfig.cache
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_clientes.resources
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_processos.resources
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_menu_relat.resources
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.relat_cliente_atendido.resources
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.relat_processos.resources
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.relat_produtos_vendidos.resources
+E:\Project\VB_NET_Projects\cybercoffee\obj\Debug\net5.0-windows\cybercoffee.frm_menu_gerente.resources

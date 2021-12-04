@@ -53,7 +53,6 @@
 
         Try
             sql = "INSERT INTO processo (Descricao," & campos_id & ") VALUES ('" & descricao & "'," & valores_id & ")"
-            mensagem_aviso(sql)
             rs = db.Execute(sql)
             Return rs
         Catch ex As Exception

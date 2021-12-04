@@ -1,27 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Downloads\\cybercoffe-vb\\cybercoffee.vbproj": {}
+    "E:\\Project\\VB_NET_Projects\\cybercoffee\\cybercoffee.vbproj": {}
   },
   "projects": {
-    "F:\\Downloads\\cybercoffe-vb\\cybercoffee.vbproj": {
+    "E:\\Project\\VB_NET_Projects\\cybercoffee\\cybercoffee.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Downloads\\cybercoffe-vb\\cybercoffee.vbproj",
+        "projectUniqueName": "E:\\Project\\VB_NET_Projects\\cybercoffee\\cybercoffee.vbproj",
         "projectName": "cybercoffee",
-        "projectPath": "F:\\Downloads\\cybercoffe-vb\\cybercoffee.vbproj",
-        "packagesPath": "C:\\Users\\Usuario(a) Master\\.nuget\\packages\\",
-        "outputPath": "F:\\Downloads\\cybercoffe-vb\\obj\\",
+        "projectPath": "E:\\Project\\VB_NET_Projects\\cybercoffee\\cybercoffee.vbproj",
+        "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+        "outputPath": "E:\\Project\\VB_NET_Projects\\cybercoffee\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario(a) Master\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0-windows7.0": {
@@ -56,7 +61,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -4,8 +4,12 @@
         preencher_cmb_categoria()
         preencher_produtos()
         preencher_categorias()
-        cmb_opcoes.SelectedIndex = 0
-        cmb_categoria.SelectedIndex = 0
+        If cmb_opcoes.Items.Count > 0 Then
+            cmb_opcoes.SelectedIndex = 0
+        End If
+        If cmb_categoria.Items.Count > 0 Then
+            cmb_categoria.SelectedIndex = 0
+        End If
     End Sub
 
     Sub preencher_cmb_categoria()

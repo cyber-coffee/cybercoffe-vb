@@ -22,7 +22,7 @@
         End If
     End Sub
 
-    Private Sub PrcessosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrcessosToolStripMenuItem.Click
+    Private Sub PrcessosToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frm_processos.Show()
     End Sub
 
@@ -38,5 +38,9 @@
 
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
         frm_clientes.Show()
+    End Sub
+
+    Private Sub ReportsToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        frm_menu_relat.ShowDialog()
     End Sub
 End Class

@@ -151,7 +151,7 @@ Partial Class frm_login
         Me.btn_signin.Name = "btn_signin"
         Me.btn_signin.Size = New System.Drawing.Size(283, 33)
         Me.btn_signin.TabIndex = 2
-        Me.btn_signin.Text = "Manager environment"
+        Me.btn_signin.Text = "Cadastrar funcionários"
         Me.btn_signin.UseVisualStyleBackColor = False
         '
         'PictureBox3
@@ -185,7 +185,7 @@ Partial Class frm_login
         Me.txt_exit.Name = "txt_exit"
         Me.txt_exit.Size = New System.Drawing.Size(283, 33)
         Me.txt_exit.TabIndex = 12
-        Me.txt_exit.Text = "Exit system"
+        Me.txt_exit.Text = "Sair do sistema"
         Me.txt_exit.UseVisualStyleBackColor = False
         '
         'frm_login

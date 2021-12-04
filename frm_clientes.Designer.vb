@@ -45,13 +45,15 @@ Partial Class frm_clientes
         Me.col_fone_residencial = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_celular = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dir_imagem = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_busca = New System.Windows.Forms.DataGridViewImageColumn()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.img_foto = New System.Windows.Forms.PictureBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.txt_id_atendente = New System.Windows.Forms.TextBox()
-        Me.cmb_atendente = New System.Windows.Forms.ComboBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.chk_cadastro_simplificado = New System.Windows.Forms.CheckBox()
+        Me.cmb_atendente = New System.Windows.Forms.ComboBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.txt_email = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -107,11 +109,13 @@ Partial Class frm_clientes
         Me.txt_nome_atendente = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgv_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        CType(Me.img_foto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -193,7 +197,7 @@ Partial Class frm_clientes
         Me.TabControl1.Location = New System.Drawing.Point(271, 64)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(571, 441)
+        Me.TabControl1.Size = New System.Drawing.Size(571, 498)
         Me.TabControl1.TabIndex = 74
         '
         'TabPage1
@@ -203,7 +207,7 @@ Partial Class frm_clientes
         Me.TabPage1.Location = New System.Drawing.Point(4, 24)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(563, 413)
+        Me.TabPage1.Size = New System.Drawing.Size(563, 470)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Clientes"
         '
@@ -211,11 +215,11 @@ Partial Class frm_clientes
         '
         Me.dgv_clientes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.index, Me.col_CPF_cliente, Me.col_id_atendente, Me.col_Nome_cliente, Me.col_Data_nasc, Me.col_cep, Me.col_endereco, Me.col_complemento, Me.col_bairro, Me.col_cidade, Me.col_uf, Me.col_fone_residencial, Me.col_celular, Me.col_email, Me.col_busca})
+        Me.dgv_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.index, Me.col_CPF_cliente, Me.col_id_atendente, Me.col_Nome_cliente, Me.col_Data_nasc, Me.col_cep, Me.col_endereco, Me.col_complemento, Me.col_bairro, Me.col_cidade, Me.col_uf, Me.col_fone_residencial, Me.col_celular, Me.col_email, Me.dir_imagem, Me.col_busca})
         Me.dgv_clientes.Location = New System.Drawing.Point(3, 3)
         Me.dgv_clientes.Name = "dgv_clientes"
         Me.dgv_clientes.RowTemplate.Height = 25
-        Me.dgv_clientes.Size = New System.Drawing.Size(557, 407)
+        Me.dgv_clientes.Size = New System.Drawing.Size(557, 464)
         Me.dgv_clientes.TabIndex = 0
         '
         'index
@@ -288,6 +292,11 @@ Partial Class frm_clientes
         Me.col_email.HeaderText = "E-mail"
         Me.col_email.Name = "col_email"
         '
+        'dir_imagem
+        '
+        Me.dir_imagem.HeaderText = "Imagem"
+        Me.dir_imagem.Name = "dir_imagem"
+        '
         'col_busca
         '
         Me.col_busca.HeaderText = "BUSCAR"
@@ -297,11 +306,12 @@ Partial Class frm_clientes
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.TabPage2.Controls.Add(Me.img_foto)
         Me.TabPage2.Controls.Add(Me.Label22)
         Me.TabPage2.Controls.Add(Me.txt_id_atendente)
-        Me.TabPage2.Controls.Add(Me.cmb_atendente)
         Me.TabPage2.Controls.Add(Me.Label21)
         Me.TabPage2.Controls.Add(Me.chk_cadastro_simplificado)
+        Me.TabPage2.Controls.Add(Me.cmb_atendente)
         Me.TabPage2.Controls.Add(Me.TextBox7)
         Me.TabPage2.Controls.Add(Me.txt_email)
         Me.TabPage2.Controls.Add(Me.Label20)
@@ -349,16 +359,26 @@ Partial Class frm_clientes
         Me.TabPage2.Location = New System.Drawing.Point(4, 24)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(563, 413)
+        Me.TabPage2.Size = New System.Drawing.Size(563, 470)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Cadastrar/Alterar clientes"
+        '
+        'img_foto
+        '
+        Me.img_foto.BackColor = System.Drawing.Color.FromArgb(CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(19, Byte), Integer))
+        Me.img_foto.Location = New System.Drawing.Point(375, 14)
+        Me.img_foto.Name = "img_foto"
+        Me.img_foto.Size = New System.Drawing.Size(170, 159)
+        Me.img_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.img_foto.TabIndex = 123
+        Me.img_foto.TabStop = False
         '
         'Label22
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.Location = New System.Drawing.Point(380, 129)
+        Me.Label22.Location = New System.Drawing.Point(24, 196)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(67, 17)
         Me.Label22.TabIndex = 122
@@ -368,27 +388,16 @@ Partial Class frm_clientes
         '
         Me.txt_id_atendente.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.txt_id_atendente.Enabled = False
-        Me.txt_id_atendente.Location = New System.Drawing.Point(380, 149)
+        Me.txt_id_atendente.Location = New System.Drawing.Point(24, 216)
         Me.txt_id_atendente.Name = "txt_id_atendente"
         Me.txt_id_atendente.Size = New System.Drawing.Size(19, 23)
         Me.txt_id_atendente.TabIndex = 121
-        '
-        'cmb_atendente
-        '
-        Me.cmb_atendente.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.cmb_atendente.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmb_atendente.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.cmb_atendente.FormattingEnabled = True
-        Me.cmb_atendente.Location = New System.Drawing.Point(405, 150)
-        Me.cmb_atendente.Name = "cmb_atendente"
-        Me.cmb_atendente.Size = New System.Drawing.Size(140, 23)
-        Me.cmb_atendente.TabIndex = 78
         '
         'Label21
         '
         Me.Label21.AutoSize = True
         Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.Location = New System.Drawing.Point(373, 64)
+        Me.Label21.Location = New System.Drawing.Point(375, 220)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(172, 45)
         Me.Label21.TabIndex = 119
@@ -398,12 +407,23 @@ Partial Class frm_clientes
         '
         Me.chk_cadastro_simplificado.AutoSize = True
         Me.chk_cadastro_simplificado.ForeColor = System.Drawing.Color.White
-        Me.chk_cadastro_simplificado.Location = New System.Drawing.Point(371, 34)
+        Me.chk_cadastro_simplificado.Location = New System.Drawing.Point(373, 190)
         Me.chk_cadastro_simplificado.Name = "chk_cadastro_simplificado"
         Me.chk_cadastro_simplificado.Size = New System.Drawing.Size(146, 19)
-        Me.chk_cadastro_simplificado.TabIndex = 118
+        Me.chk_cadastro_simplificado.TabIndex = 4
         Me.chk_cadastro_simplificado.Text = "Cadastro simplificado?"
         Me.chk_cadastro_simplificado.UseVisualStyleBackColor = True
+        '
+        'cmb_atendente
+        '
+        Me.cmb_atendente.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.cmb_atendente.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmb_atendente.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
+        Me.cmb_atendente.FormattingEnabled = True
+        Me.cmb_atendente.Location = New System.Drawing.Point(49, 217)
+        Me.cmb_atendente.Name = "cmb_atendente"
+        Me.cmb_atendente.Size = New System.Drawing.Size(304, 23)
+        Me.cmb_atendente.TabIndex = 3
         '
         'TextBox7
         '
@@ -412,7 +432,7 @@ Partial Class frm_clientes
         Me.TextBox7.Enabled = False
         Me.TextBox7.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.TextBox7.ForeColor = System.Drawing.Color.White
-        Me.TextBox7.Location = New System.Drawing.Point(478, 269)
+        Me.TextBox7.Location = New System.Drawing.Point(478, 340)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.PlaceholderText = "UF"
         Me.TextBox7.Size = New System.Drawing.Size(15, 18)
@@ -424,17 +444,17 @@ Partial Class frm_clientes
         Me.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_email.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txt_email.ForeColor = System.Drawing.Color.White
-        Me.txt_email.Location = New System.Drawing.Point(58, 359)
+        Me.txt_email.Location = New System.Drawing.Point(58, 430)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.PlaceholderText = "E-mail"
         Me.txt_email.Size = New System.Drawing.Size(155, 18)
-        Me.txt_email.TabIndex = 114
+        Me.txt_email.TabIndex = 6
         '
         'Label20
         '
         Me.Label20.AutoSize = True
         Me.Label20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.Label20.Location = New System.Drawing.Point(21, 371)
+        Me.Label20.Location = New System.Drawing.Point(21, 442)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(192, 15)
         Me.Label20.TabIndex = 115
@@ -443,7 +463,7 @@ Partial Class frm_clientes
         'PictureBox15
         '
         Me.PictureBox15.Image = CType(resources.GetObject("PictureBox15.Image"), System.Drawing.Image)
-        Me.PictureBox15.Location = New System.Drawing.Point(25, 359)
+        Me.PictureBox15.Location = New System.Drawing.Point(25, 430)
         Me.PictureBox15.Name = "PictureBox15"
         Me.PictureBox15.Size = New System.Drawing.Size(10, 18)
         Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -455,7 +475,7 @@ Partial Class frm_clientes
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.Location = New System.Drawing.Point(23, 323)
+        Me.Label19.Location = New System.Drawing.Point(23, 394)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(44, 17)
         Me.Label19.TabIndex = 113
@@ -466,7 +486,7 @@ Partial Class frm_clientes
         Me.txt_uf.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.txt_uf.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_uf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.txt_uf.Location = New System.Drawing.Point(499, 271)
+        Me.txt_uf.Location = New System.Drawing.Point(499, 342)
         Me.txt_uf.Mask = "AA"
         Me.txt_uf.Name = "txt_uf"
         Me.txt_uf.Size = New System.Drawing.Size(34, 16)
@@ -477,17 +497,17 @@ Partial Class frm_clientes
         Me.txt_celular.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.txt_celular.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_celular.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.txt_celular.Location = New System.Drawing.Point(417, 359)
+        Me.txt_celular.Location = New System.Drawing.Point(417, 430)
         Me.txt_celular.Mask = "(00)00000-0000"
         Me.txt_celular.Name = "txt_celular"
         Me.txt_celular.Size = New System.Drawing.Size(100, 16)
-        Me.txt_celular.TabIndex = 111
+        Me.txt_celular.TabIndex = 8
         '
         'Label18
         '
         Me.Label18.AutoSize = True
         Me.Label18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.Label18.Location = New System.Drawing.Point(380, 371)
+        Me.Label18.Location = New System.Drawing.Point(380, 442)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(147, 15)
         Me.Label18.TabIndex = 109
@@ -496,7 +516,7 @@ Partial Class frm_clientes
         'PictureBox14
         '
         Me.PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), System.Drawing.Image)
-        Me.PictureBox14.Location = New System.Drawing.Point(384, 359)
+        Me.PictureBox14.Location = New System.Drawing.Point(384, 430)
         Me.PictureBox14.Name = "PictureBox14"
         Me.PictureBox14.Size = New System.Drawing.Size(10, 18)
         Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -508,17 +528,17 @@ Partial Class frm_clientes
         Me.txt_fone_residencial.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.txt_fone_residencial.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_fone_residencial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.txt_fone_residencial.Location = New System.Drawing.Point(264, 359)
+        Me.txt_fone_residencial.Location = New System.Drawing.Point(264, 430)
         Me.txt_fone_residencial.Mask = "(00)0000-0000"
         Me.txt_fone_residencial.Name = "txt_fone_residencial"
         Me.txt_fone_residencial.Size = New System.Drawing.Size(100, 16)
-        Me.txt_fone_residencial.TabIndex = 108
+        Me.txt_fone_residencial.TabIndex = 7
         '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.Label17.Location = New System.Drawing.Point(227, 371)
+        Me.Label17.Location = New System.Drawing.Point(227, 442)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(147, 15)
         Me.Label17.TabIndex = 106
@@ -527,7 +547,7 @@ Partial Class frm_clientes
         'PictureBox13
         '
         Me.PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), System.Drawing.Image)
-        Me.PictureBox13.Location = New System.Drawing.Point(231, 359)
+        Me.PictureBox13.Location = New System.Drawing.Point(231, 430)
         Me.PictureBox13.Name = "PictureBox13"
         Me.PictureBox13.Size = New System.Drawing.Size(10, 18)
         Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -539,7 +559,7 @@ Partial Class frm_clientes
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(375, 323)
+        Me.Label16.Location = New System.Drawing.Point(375, 394)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(101, 17)
         Me.Label16.TabIndex = 105
@@ -550,7 +570,7 @@ Partial Class frm_clientes
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(228, 323)
+        Me.Label15.Location = New System.Drawing.Point(228, 394)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(126, 17)
         Me.Label15.TabIndex = 104
@@ -560,7 +580,7 @@ Partial Class frm_clientes
         '
         Me.Label14.AutoSize = True
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(458, 283)
+        Me.Label14.Location = New System.Drawing.Point(458, 354)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(77, 15)
         Me.Label14.TabIndex = 102
@@ -569,7 +589,7 @@ Partial Class frm_clientes
         'PictureBox12
         '
         Me.PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), System.Drawing.Image)
-        Me.PictureBox12.Location = New System.Drawing.Point(462, 271)
+        Me.PictureBox12.Location = New System.Drawing.Point(462, 342)
         Me.PictureBox12.Name = "PictureBox12"
         Me.PictureBox12.Size = New System.Drawing.Size(10, 18)
         Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -582,7 +602,7 @@ Partial Class frm_clientes
         Me.txt_cidade.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_cidade.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txt_cidade.ForeColor = System.Drawing.Color.White
-        Me.txt_cidade.Location = New System.Drawing.Point(211, 271)
+        Me.txt_cidade.Location = New System.Drawing.Point(211, 342)
         Me.txt_cidade.Name = "txt_cidade"
         Me.txt_cidade.PlaceholderText = "Cidade"
         Me.txt_cidade.Size = New System.Drawing.Size(230, 18)
@@ -592,7 +612,7 @@ Partial Class frm_clientes
         '
         Me.Label12.AutoSize = True
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(174, 283)
+        Me.Label12.Location = New System.Drawing.Point(174, 354)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(267, 15)
         Me.Label12.TabIndex = 99
@@ -601,7 +621,7 @@ Partial Class frm_clientes
         'PictureBox11
         '
         Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
-        Me.PictureBox11.Location = New System.Drawing.Point(178, 271)
+        Me.PictureBox11.Location = New System.Drawing.Point(178, 342)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(10, 18)
         Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -614,7 +634,7 @@ Partial Class frm_clientes
         Me.txt_bairro.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_bairro.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txt_bairro.ForeColor = System.Drawing.Color.White
-        Me.txt_bairro.Location = New System.Drawing.Point(58, 271)
+        Me.txt_bairro.Location = New System.Drawing.Point(58, 342)
         Me.txt_bairro.Name = "txt_bairro"
         Me.txt_bairro.PlaceholderText = "Bairro"
         Me.txt_bairro.Size = New System.Drawing.Size(107, 18)
@@ -624,7 +644,7 @@ Partial Class frm_clientes
         '
         Me.Label11.AutoSize = True
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(21, 283)
+        Me.Label11.Location = New System.Drawing.Point(21, 354)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(142, 15)
         Me.Label11.TabIndex = 96
@@ -633,7 +653,7 @@ Partial Class frm_clientes
         'PictureBox10
         '
         Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
-        Me.PictureBox10.Location = New System.Drawing.Point(25, 271)
+        Me.PictureBox10.Location = New System.Drawing.Point(25, 342)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(10, 18)
         Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -646,7 +666,7 @@ Partial Class frm_clientes
         Me.txt_comp.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_comp.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txt_comp.ForeColor = System.Drawing.Color.White
-        Me.txt_comp.Location = New System.Drawing.Point(438, 224)
+        Me.txt_comp.Location = New System.Drawing.Point(438, 295)
         Me.txt_comp.Name = "txt_comp"
         Me.txt_comp.PlaceholderText = "Complemento"
         Me.txt_comp.Size = New System.Drawing.Size(107, 18)
@@ -656,7 +676,7 @@ Partial Class frm_clientes
         '
         Me.Label10.AutoSize = True
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(401, 236)
+        Me.Label10.Location = New System.Drawing.Point(401, 307)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(132, 15)
         Me.Label10.TabIndex = 93
@@ -665,7 +685,7 @@ Partial Class frm_clientes
         'PictureBox9
         '
         Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
-        Me.PictureBox9.Location = New System.Drawing.Point(405, 224)
+        Me.PictureBox9.Location = New System.Drawing.Point(405, 295)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(10, 18)
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -681,7 +701,7 @@ Partial Class frm_clientes
         Me.txt_data_nasc.Mask = "00/00/0000"
         Me.txt_data_nasc.Name = "txt_data_nasc"
         Me.txt_data_nasc.Size = New System.Drawing.Size(115, 16)
-        Me.txt_data_nasc.TabIndex = 91
+        Me.txt_data_nasc.TabIndex = 1
         '
         'Label9
         '
@@ -720,7 +740,7 @@ Partial Class frm_clientes
         Me.txt_endereco.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_endereco.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txt_endereco.ForeColor = System.Drawing.Color.White
-        Me.txt_endereco.Location = New System.Drawing.Point(202, 226)
+        Me.txt_endereco.Location = New System.Drawing.Point(202, 297)
         Me.txt_endereco.Name = "txt_endereco"
         Me.txt_endereco.PlaceholderText = "Endereço"
         Me.txt_endereco.Size = New System.Drawing.Size(107, 18)
@@ -730,7 +750,7 @@ Partial Class frm_clientes
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(165, 238)
+        Me.Label7.Location = New System.Drawing.Point(165, 309)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(222, 15)
         Me.Label7.TabIndex = 86
@@ -739,7 +759,7 @@ Partial Class frm_clientes
         'PictureBox7
         '
         Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(169, 226)
+        Me.PictureBox7.Location = New System.Drawing.Point(169, 297)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(10, 18)
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -751,7 +771,7 @@ Partial Class frm_clientes
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(25, 195)
+        Me.Label6.Location = New System.Drawing.Point(25, 266)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(30, 17)
         Me.Label6.TabIndex = 84
@@ -773,11 +793,11 @@ Partial Class frm_clientes
         Me.txt_cep.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.txt_cep.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_cep.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.txt_cep.Location = New System.Drawing.Point(58, 226)
+        Me.txt_cep.Location = New System.Drawing.Point(58, 297)
         Me.txt_cep.Mask = "00000-000"
         Me.txt_cep.Name = "txt_cep"
         Me.txt_cep.Size = New System.Drawing.Size(100, 16)
-        Me.txt_cep.TabIndex = 82
+        Me.txt_cep.TabIndex = 5
         '
         'txt_cpf
         '
@@ -788,13 +808,13 @@ Partial Class frm_clientes
         Me.txt_cpf.Mask = "000,000,000-00"
         Me.txt_cpf.Name = "txt_cpf"
         Me.txt_cpf.Size = New System.Drawing.Size(115, 16)
-        Me.txt_cpf.TabIndex = 80
+        Me.txt_cpf.TabIndex = 0
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(21, 238)
+        Me.Label3.Location = New System.Drawing.Point(21, 309)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(127, 15)
         Me.Label3.TabIndex = 78
@@ -803,7 +823,7 @@ Partial Class frm_clientes
         'PictureBox6
         '
         Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.Location = New System.Drawing.Point(25, 226)
+        Me.PictureBox6.Location = New System.Drawing.Point(25, 297)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(10, 18)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -820,7 +840,7 @@ Partial Class frm_clientes
         Me.txt_nome_cliente.Name = "txt_nome_cliente"
         Me.txt_nome_cliente.PlaceholderText = "Nome do cliente"
         Me.txt_nome_cliente.Size = New System.Drawing.Size(107, 18)
-        Me.txt_nome_cliente.TabIndex = 74
+        Me.txt_nome_cliente.TabIndex = 2
         '
         'Label1
         '
@@ -881,7 +901,7 @@ Partial Class frm_clientes
         Me.btn_cadastrar_cliente.Margin = New System.Windows.Forms.Padding(10, 8, 3, 3)
         Me.btn_cadastrar_cliente.Name = "btn_cadastrar_cliente"
         Me.btn_cadastrar_cliente.Size = New System.Drawing.Size(200, 26)
-        Me.btn_cadastrar_cliente.TabIndex = 75
+        Me.btn_cadastrar_cliente.TabIndex = 9
         Me.btn_cadastrar_cliente.Text = "Cadastrar Cliente"
         Me.btn_cadastrar_cliente.UseVisualStyleBackColor = False
         '
@@ -893,7 +913,7 @@ Partial Class frm_clientes
         Me.btn_alterar_cliente.Margin = New System.Windows.Forms.Padding(10, 8, 3, 3)
         Me.btn_alterar_cliente.Name = "btn_alterar_cliente"
         Me.btn_alterar_cliente.Size = New System.Drawing.Size(200, 26)
-        Me.btn_alterar_cliente.TabIndex = 76
+        Me.btn_alterar_cliente.TabIndex = 10
         Me.btn_alterar_cliente.Text = "Alterar cliente"
         Me.btn_alterar_cliente.UseVisualStyleBackColor = False
         '
@@ -905,7 +925,7 @@ Partial Class frm_clientes
         Me.btn_retornar_menu.Margin = New System.Windows.Forms.Padding(10, 8, 3, 3)
         Me.btn_retornar_menu.Name = "btn_retornar_menu"
         Me.btn_retornar_menu.Size = New System.Drawing.Size(200, 26)
-        Me.btn_retornar_menu.TabIndex = 31
+        Me.btn_retornar_menu.TabIndex = 11
         Me.btn_retornar_menu.Text = "Retornar ao menu"
         Me.btn_retornar_menu.UseVisualStyleBackColor = False
         '
@@ -993,12 +1013,16 @@ Partial Class frm_clientes
         Me.Button1.TabIndex = 77
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'frm_clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(868, 517)
+        Me.ClientSize = New System.Drawing.Size(868, 574)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn_alterar_cliente)
         Me.Controls.Add(Me.btn_cadastrar_cliente)
@@ -1019,6 +1043,7 @@ Partial Class frm_clientes
         CType(Me.dgv_clientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        CType(Me.img_foto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1102,6 +1127,17 @@ Partial Class frm_clientes
     Friend WithEvents Label22 As Label
     Friend WithEvents txt_id_atendente As TextBox
     Friend WithEvents cmb_atendente As ComboBox
+    Friend WithEvents btn_retornar_menu As Button
+    Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents txt_cargo_atendente As Label
+    Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents txt_nome_atendente As Label
+    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents img_foto As PictureBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents index As DataGridViewTextBoxColumn
     Friend WithEvents col_CPF_cliente As DataGridViewTextBoxColumn
     Friend WithEvents col_id_atendente As DataGridViewTextBoxColumn
@@ -1116,14 +1152,6 @@ Partial Class frm_clientes
     Friend WithEvents col_fone_residencial As DataGridViewTextBoxColumn
     Friend WithEvents col_celular As DataGridViewTextBoxColumn
     Friend WithEvents col_email As DataGridViewTextBoxColumn
+    Friend WithEvents dir_imagem As DataGridViewTextBoxColumn
     Friend WithEvents col_busca As DataGridViewImageColumn
-    Friend WithEvents btn_retornar_menu As Button
-    Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents txt_cargo_atendente As Label
-    Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents txt_nome_atendente As Label
-    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
-    Friend WithEvents Button1 As Button
 End Class
