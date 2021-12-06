@@ -4,14 +4,18 @@
     End Sub
 
     Sub preencher_pedidos()
-        dgv_orders.Rows.Clear()
-        rs = consultar_pedidos_por_atendente(Integer.Parse(atendente.Fields(2).Value))
-        While rs.EOF = False
-            With dgv_orders
-                .Rows.Add(rs.Fields(0).Value, parse_date(rs.Fields(1).Value), rs.Fields(4).Value, rs.Fields(2).Value, rs.Fields(5).Value, rs.Fields(6).Value, Nothing)
-            End With
-            rs.MoveNext()
-        End While
+        Try
+            dgv_orders.Rows.Clear()
+            rs = consultar_pedidos_por_atendente(Integer.Parse(atendente.Fields(2).Value))
+            While rs.EOF = False
+                With dgv_orders
+                    .Rows.Add(rs.Fields(0).Value, parse_date(rs.Fields(1).Value), rs.Fields(4).Value, rs.Fields(2).Value, rs.Fields(5).Value, rs.Fields(6).Value, Nothing)
+                End With
+                rs.MoveNext()
+            End While
+        Catch ex As Exception
+            mensagem_erro("Erro ao carregar pedidos.")
+        End Try
     End Sub
 
     Sub preencher_dados_pedido()
@@ -47,25 +51,33 @@
 
 
     Private Sub frm_orders_Load(sender As Object, e As EventArgs) Handles Me.Load
-        conecta_banco_mysql()
-        alterar_sessao_atendente(consultar_atendente_id(1))
-        alterar_sessao_cargo("Atendente")
-        preencher_pedidos()
-        txt_cod_atendente.Text = atendente.Fields(2).Value
-        txt_nome_atendente.Text = atendente.Fields(0).Value
-        txt_atendente.Text = atendente.Fields(0).Value
-        txt_cargo.Text = role
-        txt_status.Text = "Não iniciado"
-        txt_data_emissao.Text = today
+        Try
+            conecta_banco_mysql()
+            alterar_sessao_atendente(consultar_atendente_id(1))
+            alterar_sessao_cargo("Atendente")
+            preencher_pedidos()
+            txt_cod_atendente.Text = atendente.Fields(2).Value
+            txt_nome_atendente.Text = atendente.Fields(0).Value
+            txt_atendente.Text = atendente.Fields(0).Value
+            txt_cargo.Text = role
+            txt_status.Text = "Não iniciado"
+            txt_data_emissao.Text = today
+        Catch ex As Exception
+            mensagem_erro("Erro ao carregar dados.")
+        End Try
     End Sub
 
     Private Sub dgv_orders_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_orders.CellClick
-        If dgv_orders.CurrentRow.Cells(6).Selected Then
+        Try
+            If dgv_orders.CurrentRow.Cells(6).Selected Then
+                alterar_pedido_selecionado(dgv_orders.CurrentRow.Cells(0).Value)
+                frm_pedido.Show()
+                Exit Sub
+            End If
             alterar_pedido_selecionado(dgv_orders.CurrentRow.Cells(0).Value)
-            frm_pedido.Show()
-            Exit Sub
-        End If
-        alterar_pedido_selecionado(dgv_orders.CurrentRow.Cells(0).Value)
+        Catch ex As Exception
+            mensagem_erro("Erro ao processar pedido. Tente novamente.")
+        End Try
     End Sub
 
     Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
@@ -86,6 +98,10 @@
     End Sub
 
     Private Sub btn_adicionar_pedido_Click(sender As Object, e As EventArgs) Handles btn_adicionar_pedido.Click
+        If campos_vazios() Then
+            mensagem_aviso("Campos vazios encontrados! Favor preencher todos os campos.")
+            Exit Sub
+        End If
         Dim pedido_existe As Boolean
         Try
             rs = consultar_pedido_id(Integer.Parse(txt_cod_pedido.Text))
@@ -98,12 +114,16 @@
                             "Favor manter campo id em branco.")
             Exit Sub
         End If
-        inserir_pedido(txt_cod_atendente.Text, txt_cpf_cliente.Text)
-        mensagem_sucesso("Pedido criado com sucesso!")
-        preencher_pedidos()
-        Dim ultimo_valor As ADODB.Recordset
-        ultimo_valor = selecionar_ultimo_campo("pedido", "ID_pedido")
-        inserir_processo("Pedido de código: " & ultimo_valor.Fields(0).Value & " cadastrado.", 0, atendente.Fields(2).Value)
+        Try
+            inserir_pedido(txt_cod_atendente.Text, txt_cpf_cliente.Text)
+            mensagem_sucesso("Pedido criado com sucesso!")
+            preencher_pedidos()
+            Dim ultimo_valor As ADODB.Recordset
+            ultimo_valor = selecionar_ultimo_campo("pedido", "ID_pedido")
+            inserir_processo("Pedido de código: " & ultimo_valor.Fields(0).Value & " cadastrado.", 0, atendente.Fields(2).Value)
+        Catch ex As Exception
+            mensagem_erro("Erro ao processar pedido.")
+        End Try
     End Sub
 
     Private Sub txt_cod_pedido_LostFocus(sender As Object, e As EventArgs) Handles txt_cod_pedido.LostFocus
@@ -111,6 +131,10 @@
     End Sub
 
     Private Sub btn_alterar_pedido_Click(sender As Object, e As EventArgs) Handles btn_alterar_pedido.Click
+        If campos_vazios() Then
+            mensagem_aviso("Campos vazios encontrados! Favor preencher todos os campos.")
+            Exit Sub
+        End If
         Try
             rs = consultar_pedido_id(Integer.Parse(txt_cod_pedido.Text))
             If rs.EOF = False Then
@@ -164,6 +188,10 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
     End Sub
+
+    Function campos_vazios()
+        Return txt_cpf_cliente.Text = "" Or txt_cod_atendente.Text = "" Or txt_atendente.Text = "" Or txt_nome_cliente.Text = ""
+    End Function
 
     Private Sub btn_retornar_menu_Click(sender As Object, e As EventArgs) Handles btn_retornar_menu.Click
         Me.Close()

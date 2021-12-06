@@ -1,26 +1,34 @@
 ﻿Public Class frm_products
     Private Sub frm_products_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conecta_banco_mysql()
-        preencher_cmb_categoria()
-        preencher_produtos()
-        preencher_categorias()
-        If cmb_opcoes.Items.Count > 0 Then
-            cmb_opcoes.SelectedIndex = 0
-        End If
-        If cmb_categoria.Items.Count > 0 Then
-            cmb_categoria.SelectedIndex = 0
-        End If
+        Try
+            conecta_banco_mysql()
+            preencher_cmb_categoria()
+            preencher_produtos()
+            preencher_categorias()
+            If cmb_opcoes.Items.Count > 0 Then
+                cmb_opcoes.SelectedIndex = 0
+            End If
+            If cmb_categoria.Items.Count > 0 Then
+                cmb_categoria.SelectedIndex = 0
+            End If
+        Catch ex As Exception
+            mensagem_erro("Erro ao carregar dados.")
+        End Try
     End Sub
 
     Sub preencher_cmb_categoria()
-        cmb_categoria.Items.Clear()
-        rs = consultar_categorias()
-        While rs.EOF = False
-            With cmb_categoria
-                .Items.Add(rs.Fields(1).Value)
-            End With
-            rs.MoveNext()
-        End While
+        Try
+            cmb_categoria.Items.Clear()
+            rs = consultar_categorias()
+            While rs.EOF = False
+                With cmb_categoria
+                    .Items.Add(rs.Fields(1).Value)
+                End With
+                rs.MoveNext()
+            End While
+        Catch ex As Exception
+            mensagem_erro("Erro ao preencher categorias.")
+        End Try
     End Sub
 
 
@@ -106,65 +114,85 @@
         End If
 
         categoria_id = rs.Fields(0).Value
+        Try
+            alterar_produto(txt_nome_produto.Text, valor_unit, categoria_id, qtde_estoque, txt_id.Text)
+            MsgBox("Produto alterado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "SUCESSO")
+            preencher_produtos()
+            limpar_campos_produto()
+        Catch ex As Exception
+            mensagem_erro("Erro ao executar operação.")
+        End Try
 
-        alterar_produto(txt_nome_produto.Text, valor_unit, categoria_id, qtde_estoque, txt_id.Text)
-        MsgBox("Produto alterado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "SUCESSO")
-        preencher_produtos()
-        limpar_campos_produto()
     End Sub
 
     Private Sub preencher_produtos()
-        dgv_produtos.Rows().Clear()
-        rs = consultar_todos_produtos_e_categoria()
-        While rs.EOF = False
-            With dgv_produtos
-                .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(2).Value, rs.Fields(7).Value, Nothing, Nothing)
-            End With
-            rs.MoveNext()
-        End While
+        Try
+            dgv_produtos.Rows().Clear()
+            rs = consultar_todos_produtos_e_categoria()
+            While rs.EOF = False
+                With dgv_produtos
+                    .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(2).Value, rs.Fields(7).Value, Nothing, Nothing)
+                End With
+                rs.MoveNext()
+            End While
+        Catch ex As Exception
+            mensagem_erro("Erro ao processar pedido.")
+        End Try
     End Sub
 
     Private Sub preencher_categorias()
-        dgv_categorias.Rows().Clear()
-        rs = consultar_categorias()
-        While rs.EOF = False
-            With dgv_categorias
-                .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, Nothing, Nothing)
-            End With
-            rs.MoveNext()
-        End While
+        Try
+            dgv_categorias.Rows().Clear()
+            rs = consultar_categorias()
+            While rs.EOF = False
+                With dgv_categorias
+                    .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, Nothing, Nothing)
+                End With
+                rs.MoveNext()
+            End While
+        Catch ex As Exception
+            mensagem_erro("Erro ao carregar categorias.")
+        End Try
     End Sub
 
     Private Sub preencher_produtos_similares(nome_campo As String, valor As String)
-        dgv_produtos.Rows().Clear()
-        rs = consultar_todos_produtos_e_categoria_como(nome_campo, valor)
-        While rs.EOF = False
-            With dgv_produtos
-                .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(2).Value, rs.Fields(7).Value, Nothing, Nothing)
-            End With
-            rs.MoveNext()
-        End While
+        Try
+            dgv_produtos.Rows().Clear()
+            rs = consultar_todos_produtos_e_categoria_como(nome_campo, valor)
+            While rs.EOF = False
+                With dgv_produtos
+                    .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(2).Value, rs.Fields(7).Value, Nothing, Nothing)
+                End With
+                rs.MoveNext()
+            End While
+        Catch ex As Exception
+            mensagem_erro("Erro ao carregar produtos.")
+        End Try
     End Sub
 
     Private Sub dgv_produtos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_produtos.CellClick
-        If dgv_produtos.CurrentRow.Cells(5).Selected Then
-            txt_id.Text = dgv_produtos.CurrentRow.Cells(0).Value
-            txt_nome_produto.Text = dgv_produtos.CurrentRow.Cells(1).Value
-            txt_qtde_estoque.Text = dgv_produtos.CurrentRow.Cells(2).Value
-            txt_valor_unit.Text = dgv_produtos.CurrentRow.Cells(3).Value
-            cmb_categoria.Text = dgv_produtos.CurrentRow.Cells(4).Value
-        End If
-        If dgv_produtos.CurrentRow.Cells(6).Selected Then
-            resp = mensagem_opcao("Deseja realmente apagar o produto de id: " & dgv_produtos.CurrentRow.Cells(0).Value & "?")
-            If resp = vbYes Then
-                excluir_produto(dgv_produtos.CurrentRow.Cells(0).Value)
-                inserir_processo("Produto de id: " & dgv_produtos.CurrentRow.Cells(0).Value & " excluído", 0, atendente.Fields(2).Value)
-                mensagem_sucesso("Produto excluído com sucesso!")
-            Else
-                mensagem_sucesso("Remoção cancelada")
+        Try
+            If dgv_produtos.CurrentRow.Cells(5).Selected Then
+                txt_id.Text = dgv_produtos.CurrentRow.Cells(0).Value
+                txt_nome_produto.Text = dgv_produtos.CurrentRow.Cells(1).Value
+                txt_qtde_estoque.Text = dgv_produtos.CurrentRow.Cells(2).Value
+                txt_valor_unit.Text = dgv_produtos.CurrentRow.Cells(3).Value
+                cmb_categoria.Text = dgv_produtos.CurrentRow.Cells(4).Value
             End If
-            preencher_produtos()
-        End If
+            If dgv_produtos.CurrentRow.Cells(6).Selected Then
+                resp = mensagem_opcao("Deseja realmente apagar o produto de id: " & dgv_produtos.CurrentRow.Cells(0).Value & "?")
+                If resp = vbYes Then
+                    excluir_produto(dgv_produtos.CurrentRow.Cells(0).Value)
+                    inserir_processo("Produto de id: " & dgv_produtos.CurrentRow.Cells(0).Value & " excluído", 0, atendente.Fields(2).Value)
+                    mensagem_sucesso("Produto excluído com sucesso!")
+                Else
+                    mensagem_sucesso("Remoção cancelada")
+                End If
+                preencher_produtos()
+            End If
+        Catch ex As Exception
+            mensagem_erro("Erro ao executar ação.")
+        End Try
     End Sub
 
     Sub limpar_campos()

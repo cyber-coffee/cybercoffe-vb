@@ -1,52 +1,68 @@
 ﻿Public Class frm_clientes
 
     Sub preencher_atendentes()
-        rs = consultar_todos_atendentes()
-        While rs.EOF = False
-            With cmb_atendente
-                .Items.Add(rs.Fields(2).Value & "-" & rs.Fields(0).Value)
-            End With
-            rs.MoveNext()
-        End While
+        Try
+            rs = consultar_todos_atendentes()
+            While rs.EOF = False
+                With cmb_atendente
+                    .Items.Add(rs.Fields(2).Value & "-" & rs.Fields(0).Value)
+                End With
+                rs.MoveNext()
+            End While
+        Catch ex As Exception
+            mensagem_erro("Erro ao carregar atendentes.")
+        End Try
     End Sub
 
     Sub preencher_clientes()
-        dgv_clientes.Rows.Clear()
-        cont = 1
-        rs = consultar_todos_clientes()
-        While rs.EOF = False
-            With dgv_clientes
-                .Rows.Add(cont, rs.Fields(0).Value, rs.Fields(2).Value, rs.Fields(1).Value, parse_date(rs.Fields(4).Value), rs.Fields(5).Value, rs.Fields(6).Value, rs.Fields(7).Value, rs.Fields(8).Value, rs.Fields(9).Value, rs.Fields(10).Value, rs.Fields(11).Value, rs.Fields(12).Value, rs.Fields(13).Value, rs.Fields(14).Value, Nothing)
-            End With
-            cont = cont + 1
-            rs.MoveNext()
-        End While
+        Try
+            dgv_clientes.Rows.Clear()
+            cont = 1
+            rs = consultar_todos_clientes()
+            While rs.EOF = False
+                With dgv_clientes
+                    .Rows.Add(cont, rs.Fields(0).Value, rs.Fields(2).Value, rs.Fields(1).Value, parse_date(rs.Fields(4).Value), rs.Fields(5).Value, rs.Fields(6).Value, rs.Fields(7).Value, rs.Fields(8).Value, rs.Fields(9).Value, rs.Fields(10).Value, rs.Fields(11).Value, rs.Fields(12).Value, rs.Fields(13).Value, rs.Fields(14).Value, Nothing)
+                End With
+                cont = cont + 1
+                rs.MoveNext()
+            End While
+        Catch ex As Exception
+            mensagem_erro("Erro ao carregar clientes.")
+        End Try
     End Sub
 
     Sub preencher_clientes_similares()
-        dgv_clientes.Rows.Clear()
-        cont = 1
-        rs = consultar_cliente_similares(cmb_tipo_campo.Text, txt_nome_campo.Text)
-        While rs.EOF = False
-            With dgv_clientes
-                .Rows.Add(cont, rs.Fields(0).Value, rs.Fields(2).Value, rs.Fields(1).Value, parse_date(rs.Fields(4).Value), rs.Fields(5).Value, rs.Fields(6).Value, rs.Fields(7).Value, rs.Fields(8).Value, rs.Fields(9).Value, rs.Fields(10).Value, rs.Fields(11).Value, rs.Fields(12).Value, rs.Fields(13).Value, Nothing)
-            End With
-            cont = cont + 1
-            rs.MoveNext()
-        End While
+        Try
+            dgv_clientes.Rows.Clear()
+            cont = 1
+            rs = consultar_cliente_similares(cmb_tipo_campo.Text, txt_nome_campo.Text)
+            While rs.EOF = False
+                With dgv_clientes
+                    .Rows.Add(cont, rs.Fields(0).Value, rs.Fields(2).Value, rs.Fields(1).Value, parse_date(rs.Fields(4).Value), rs.Fields(5).Value, rs.Fields(6).Value, rs.Fields(7).Value, rs.Fields(8).Value, rs.Fields(9).Value, rs.Fields(10).Value, rs.Fields(11).Value, rs.Fields(12).Value, rs.Fields(13).Value, Nothing)
+                End With
+                cont = cont + 1
+                rs.MoveNext()
+            End While
+        Catch ex As Exception
+            mensagem_erro("Erro ao processar pedido.")
+        End Try
     End Sub
 
     Private Sub frm_clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conecta_banco_mysql()
-        conecta_banco_cep_mysql()
-        alterar_sessao_atendente(consultar_atendente_id(1))
-        preencher_atendentes()
-        preencher_clientes()
-        txt_nome_atendente.Text = atendente.Fields(0).Value
-        txt_cargo_atendente.Text = role
-        cmb_tipo_campo.SelectedIndex = 0
-        diretorio = Application.StartupPath & "\icons\person128x.png"
-        img_foto.Load(diretorio)
+        Try
+            conecta_banco_mysql()
+            conecta_banco_cep_mysql()
+            alterar_sessao_atendente(consultar_atendente_id(1))
+            preencher_atendentes()
+            preencher_clientes()
+            txt_nome_atendente.Text = atendente.Fields(0).Value
+            txt_cargo_atendente.Text = role
+            cmb_tipo_campo.SelectedIndex = 0
+            diretorio = Application.StartupPath & "\icons\person128x.png"
+            img_foto.Load(diretorio)
+        Catch ex As Exception
+            mensagem_erro("Erro ao carregar dados")
+        End Try
     End Sub
 
     Private Sub cmb_atendente_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_atendente.SelectedValueChanged
